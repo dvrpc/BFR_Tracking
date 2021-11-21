@@ -11,4 +11,4 @@ dependencies:
   - openpyxl
   - sqlalchemy
   - sqlalchemy-utils
-  - requests
+  - tabula-py

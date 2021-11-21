@@ -12,5 +12,8 @@ engine = create_engine("postgresql://postgres:root@localhost:5432/bfr_tracking")
 if not database_exists(engine.url):
     create_database(engine.url)
 
+engine.execute("CREATE EXTENSION IF NOT EXISTS postgis;")
+#engine.execute("COMMIT;")
+
 #write dataframe to postgis
 df.to_sql("from_oracle", con=engine, if_exists='replace')
