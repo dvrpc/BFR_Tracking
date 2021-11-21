@@ -12,3 +12,4 @@ dependencies:
   - sqlalchemy
   - sqlalchemy-utils
   - tabula-py
+  - PyPDF2
