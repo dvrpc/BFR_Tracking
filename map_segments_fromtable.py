@@ -1,3 +1,7 @@
+###
+# To Do:
+# add road name to shapefile output for ease of use 
+
 import psycopg2 as psql
 #import pandas as pd
 import geopandas as gpd
