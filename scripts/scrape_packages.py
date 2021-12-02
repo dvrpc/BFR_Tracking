@@ -2,21 +2,13 @@
 # TO DO:
 # need a way to flag and fix multipiece segments
 # delete bottom row - totals
-
+from pathlib import Path
 import tabula
 import os
 import pandas as pd
 from PyPDF2 import PdfFileReader
 
-#create list of package files in folder
-filepath = 'D:\dvrpc_shared\BFR_Tracking\paving_package\PDFs'
-paths = []
-filenames = []
-for root, dirs, files in os.walk(filepath):
-    for f in files: 
-        if f.endswith(".pdf"):
-            paths.append(os.path.join(root, f))
-            filenames.append(os.path.join(f).replace('.pdf',''))
+pdf_folderpath = './data/paving_package'
 
 #function to insert row into DF
 def Insert_row(row_number, df, row_values):
@@ -29,17 +21,17 @@ def Insert_row(row_number, df, row_values):
     return df_result
 
 
-for j in range(0, len(paths)):
-    file = paths[j]
+for filepath in Path(pdf_folderpath).rglob("*.pdf"):
+
     #determine number of pages in PDF
-    with open(file, "rb") as pdf_file:
+    with open(filepath, "rb") as pdf_file:
         pdf_reader = PdfFileReader(pdf_file)
         num_pgs = pdf_reader.numPages
 
     #append records from each page to dataframe
     frames = []
     for i in range(1,num_pgs+1):
-        table = tabula.read_pdf(file, pages=i)
+        table = tabula.read_pdf(filepath, pages=i)
         table = table[0]
         #rename columne
         table.columns = ['project_num', 'SR_name', 'from', 'to', 'scope', 'miles', 'muni', 'adt' ]
