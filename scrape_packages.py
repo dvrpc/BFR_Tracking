@@ -1,6 +1,7 @@
 ####
 # TO DO:
 # need a way to flag and fix multipiece segments
+# delete bottom row - totals
 
 import tabula
 import os
@@ -16,6 +17,17 @@ for root, dirs, files in os.walk(filepath):
         if f.endswith(".pdf"):
             paths.append(os.path.join(root, f))
             filenames.append(os.path.join(f).replace('.pdf',''))
+
+#function to insert row into DF
+def Insert_row(row_number, df, row_values):
+    df1 = df[0:row_number]
+    df2 = df[row_number:]
+    #for v in range(0, len(row_values)):
+    df1.loc[row_number] = row_values
+    df_result = pd.concat([df1, df2], ignore_index=True)
+    #df_result.reset_index(drop = True)
+    return df_result
+
 
 for j in range(0, len(paths)):
     file = paths[j]
@@ -40,15 +52,49 @@ for j in range(0, len(paths)):
         table[['tsegment', 'to']] = table['to'].str.split("\r", n=1, expand = True)
         table[['tsegment','toffset']] = table['tsegment'].str.split("/", n=1, expand = True)
 
-        
+    
+        #split out rows with multiple segment/offsets into replacement and new rows
         for k in range(0, len(table['from'])):
-            f = str(table.iloc[k, 2])
-            t = str(table.iloc[k, 3])
-            if f[0].isdigit() == True OR t[0].isdigit() == True: 
-                print(f, t, 'True')
-            else:
-                print('False')
+            p =    str(table.iloc[k, 0]) #project_num
+            s =    str(table.iloc[k, 1]) #sr_name
+            f =    str(table.iloc[k, 2]) #from
+            t =    str(table.iloc[k, 3]) #to
+            sc =   str(table.iloc[k, 4]) #scope
+            m =    str(table.iloc[k, 5]) #miles
+            mu =   str(table.iloc[k, 6]) #muni
+            a =    str(table.iloc[k, 7]) #adt
+            fseg = str(table.iloc[k, 8]) #fsegment
+            foff = str(table.iloc[k, 9]) #foffset
+            tseg = str(table.iloc[k, 10]) #tsegment
+            toff = str(table.iloc[k, 11]) #toffset
+
+            if f[0].isdigit() == True:
+                #index = k
+                new_index = k+1
+                [f1, f2] = f.split("\r", 1)
+                [fs, fo] = f1.split("/", 1)
+                [t1, t2] = t.split("\r", 1)
+                [ts, to] = t1.split("/", 1)
+                [m1, m2] = m.split("\r", 1)
+            
+                replacement_row = [p, s, f2, t2, sc, m1, mu, a, fseg, foff, tseg, toff]
+                new_row = [p, s, f2, t2, sc, m2, mu, a, fs, fo, ts, to]
+
+                for a in range(0, len(replacement_row)):
+                    table.loc[k, a] = replacement_row[a]
+                table = Insert_row(new_index, table, new_row)
+
+                print(table.iloc[k])
+                print(table.iloc[k+1])
+
+        break    
+    break
         
+
+ 
+            
+        
+
 
 
 
@@ -57,24 +103,7 @@ for j in range(0, len(paths)):
     #allpgs = pd.concat(frames)
     #allpgs.to_csv('D:/dvrpc_shared/BFR_Tracking/paving_package/CSVs/%s.csv' % filenames[j])
 
-'''
-From/to:
-Split segment values out first and then split out where numbers meet letters
-
-How to decide what rows need this extra attention? From/to still start with numbers?
-
-What to do with multiple segments? Flag for manual decision. View and have options specified: keep one (choose which), keep both
-
-What do to with rows? Duplicate if keeping both.
-
-delete bottom row - totals
-
-Compare to 5year plan and update status accordingly
-Keep others and mark as not on 5 year plan
-
-How to Split a String Between Numbers and Letters? – Finxter
 
 
-https://blog.finxter.com/how-to-split-a-string-between-numbers-and-letters/
 
-'''
+
