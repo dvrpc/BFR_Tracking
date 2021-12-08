@@ -13,3 +13,5 @@ dependencies:
   - sqlalchemy-utils
   - tabula-py
   - PyPDF2
+  - black
+  - flake8
