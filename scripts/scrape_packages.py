@@ -9,18 +9,6 @@ import os
 import pandas as pd
 from PyPDF2 import PdfFileReader
 
-pdf_folderpath = "./data/paving_package"
-
-# function to insert row into DF
-def Insert_row(row_number, df, row_values):
-    df1 = df[0:row_number]
-    df2 = df[row_number:]
-    # for v in range(0, len(row_values)):
-    df1.loc[row_number] = row_values
-    df_result = pd.concat([df1, df2], ignore_index=True)
-    # df_result.reset_index(drop = True)
-    return df_result
-
 
 def get_number_of_pages_in_pdf(filepath: Path | str) -> int:
     """
@@ -53,85 +41,100 @@ def read_single_page_from_pdf(
     return df
 
 
-def split_text_from_one_column_to_many(
-    df: pd.DataFrame, source_column: str, dest_columns: list, splitter_text: str
-) -> pd.DataFrame:
+def extract_data_from_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Some columns hold data that needs to be exploded into multiple columns
-    This function uses a `splitter_text` pattern to move this data from
-    one column into multiple
+    Many of the values are comma-, slash-, or otherwise delimited.
+
+    This function takes the raw dataframe, extracts data into new
+    columns as needed, and returns the dataframe.
     """
-    df[dest_columns] = df[source_column].str.split(splitter_text, n=1, expand=True)
+    # # parse out columns for easier comparison with data tables
+    # df["sr"] = df["SR_name"].str.split("\r", n=1, expand=True)[0]
+    # df["sr"] = df["sr"].str[3:]
+    # df["name"] = df["SR_name"].str.split("\r", n=1, expand=True)[1]
+    # df["muni1"] = df["muni"].str.split(",", expand=True)[0]
+    # df["muni2"] = df["muni"].str.split(",", expand=True)[1]
+    # df["muni3"] = df["muni"].str.split(",", expand=True)[2]
+
+    # parse out segment/offset from 'from' and 'to' columns for mapping
+    df[["fsegment", "from"]] = df["from"].str.split("\r", n=1, expand=True)
+    df[["fsegment", "foffset"]] = df["fsegment"].str.split("/", n=1, expand=True)
+    df[["tsegment", "to"]] = df["to"].str.split("\r", n=1, expand=True)
+    df[["tsegment", "toffset"]] = df["tsegment"].str.split("/", n=1, expand=True)
+
     return df
 
 
 def row_should_become_two(row: pd.Series) -> bool:
     """
     If the first digit in the `from` column is an integer,
-    the row needs to be split into two. 
+    the row needs to be split into two.
     """
     return str(row["from"])[0].isdigit()
 
 
+def parse_single_pdf(filepath: Path) -> pd.DataFrame:
+    """
+    Run all of the business logic for a single PDF file.
+
+    - Get the number of pages, and loop through each one
+    - Identify rows that need to be split apart
+    - For any of these rows, modify the existing row and add a new one
+
+    - After repeating this for each page, merge all results into a singluar CSV output
+    """
+    print(f"Parsing: {filepath.stem}")
+
+    num_pgs = get_number_of_pages_in_pdf(filepath)
+
+    # append records from each page to dataframe
+    frames = []
+    for i in range(1, num_pgs + 1):
+        df = read_single_page_from_pdf(filepath, page_number=i)
+
+        df = extract_data_from_columns(df)
+
+        output_filepath = filepath.parent / f"{filepath.stem}-{i}.json"
+        df.to_json(output_filepath)
+
+        for idx, row in df.iterrows():
+            if row_should_become_two(row):
+                print("\t Splitting into two:")
+                print(row)
+
+                # extract values from specific cells in the row
+                f1, f2 = row["from"].split("\r", 1)
+                fs, fo = f1.split("/", 1)
+                t1, t2 = row["to"].split("\r", 1)
+                ts, to = t1.split("/", 1)
+                m1, m2 = row["miles"].split("\r", 1)
+
+                # update existing row
+                row["from"] = f2
+                row["to"] = t2
+                row["miles"] = m1
+
+                # add new row to dataframe
+                new_row = dict(row.copy())
+                new_row["miles"] = m2
+                new_row["fsegment"] = fs
+                new_row["foffset"] = fo
+                new_row["tsegment"] = ts
+                new_row["toffset"] = to
+
+                df = df.append(new_row, ignore_index=True)
+
+        frames.append(df)
+
+    allpgs = pd.concat(frames, ignore_index=True)
+
+    output_filepath = filepath.parent / f"{filepath.stem}.json"
+
+    allpgs.to_json(output_filepath)
+
+
 if __name__ == "__main__":
+    pdf_folderpath = "./data/paving_package"
+
     for filepath in Path(pdf_folderpath).rglob("*.pdf"):
-
-        num_pgs = get_number_of_pages_in_pdf(filepath)
-
-        # append records from each page to dataframe
-        frames = []
-        for i in range(1, num_pgs + 1):
-            df = read_single_page_from_pdf(filepath, page_number=i)
-
-            # parse out segment/offset from 'from' and 'to' columns for mapping
-            df = split_text_from_one_column_to_many(df, "from", ["fsegment", "from"], "\r")
-            df = split_text_from_one_column_to_many(df, "fsegment", ["fsegment", "foffset"], "/")
-            df = split_text_from_one_column_to_many(df, "to", ["tsegment", "to"], "\r")
-            df = split_text_from_one_column_to_many(df, "tsegment", ["tsegment", "toffset"], "/")
-
-            for idx, row in df.iterrows():
-                if row_should_become_two(row):
-                    print("This row needs to be split into two:")
-                    print(row)
-
-                    replacement_row = list(row)
-
-            # split out rows with multiple segment/offsets into replacement and new rows
-            for k in range(0, len(df["from"])):
-                p = str(df.iloc[k, 0])  # project_num
-                s = str(df.iloc[k, 1])  # sr_name
-                f = str(df.iloc[k, 2])  # from
-                t = str(df.iloc[k, 3])  # to
-                sc = str(df.iloc[k, 4])  # scope
-                m = str(df.iloc[k, 5])  # miles
-                mu = str(df.iloc[k, 6])  # muni
-                a = str(df.iloc[k, 7])  # adt
-                fseg = str(df.iloc[k, 8])  # fsegment
-                foff = str(df.iloc[k, 9])  # foffset
-                tseg = str(df.iloc[k, 10])  # tsegment
-                toff = str(df.iloc[k, 11])  # toffset
-
-                if f[0].isdigit() == True:
-                    # index = k
-                    new_index = k + 1
-                    [f1, f2] = f.split("\r", 1)
-                    [fs, fo] = f1.split("/", 1)
-                    [t1, t2] = t.split("\r", 1)
-                    [ts, to] = t1.split("/", 1)
-                    [m1, m2] = m.split("\r", 1)
-
-                    replacement_row = [p, s, f2, t2, sc, m1, mu, a, fseg, foff, tseg, toff]
-                    # fmt: off
-                    new_row =         [p, s, f2, t2, sc, m2, mu, a, fs, fo, ts, to]
-
-                    for a in range(0, len(replacement_row)):
-                        df.loc[k, a] = replacement_row[a]
-                    df = Insert_row(new_index, df, new_row)
-
-                    print(df.iloc[k])
-                    print(df.iloc[k + 1])
-
-        # frames.append(table)
-
-        # allpgs = pd.concat(frames)
-        # allpgs.to_csv('D:/dvrpc_shared/BFR_Tracking/paving_package/CSVs/%s.csv' % filenames[j])
+        parse_single_pdf(filepath)
