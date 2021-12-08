@@ -53,6 +53,26 @@ def read_single_page_from_pdf(
     return df
 
 
+def split_text_from_one_column_to_many(
+    df: pd.DataFrame, source_column: str, dest_columns: list, splitter_text: str
+) -> pd.DataFrame:
+    """
+    Some columns hold data that needs to be exploded into multiple columns
+    This function uses a `splitter_text` pattern to move this data from
+    one column into multiple
+    """
+    df[dest_columns] = df[source_column].str.split(splitter_text, n=1, expand=True)
+    return df
+
+
+def row_should_become_two(row: pd.Series) -> bool:
+    """
+    If the first digit in the `from` column is an integer,
+    the row needs to be split into two. 
+    """
+    return str(row["from"])[0].isdigit()
+
+
 if __name__ == "__main__":
     for filepath in Path(pdf_folderpath).rglob("*.pdf"):
 
@@ -64,10 +84,17 @@ if __name__ == "__main__":
             df = read_single_page_from_pdf(filepath, page_number=i)
 
             # parse out segment/offset from 'from' and 'to' columns for mapping
-            df[["fsegment", "from"]] = df["from"].str.split("\r", n=1, expand=True)
-            df[["fsegment", "foffset"]] = df["fsegment"].str.split("/", n=1, expand=True)
-            df[["tsegment", "to"]] = df["to"].str.split("\r", n=1, expand=True)
-            df[["tsegment", "toffset"]] = df["tsegment"].str.split("/", n=1, expand=True)
+            df = split_text_from_one_column_to_many(df, "from", ["fsegment", "from"], "\r")
+            df = split_text_from_one_column_to_many(df, "fsegment", ["fsegment", "foffset"], "/")
+            df = split_text_from_one_column_to_many(df, "to", ["tsegment", "to"], "\r")
+            df = split_text_from_one_column_to_many(df, "tsegment", ["tsegment", "toffset"], "/")
+
+            for idx, row in df.iterrows():
+                if row_should_become_two(row):
+                    print("This row needs to be split into two:")
+                    print(row)
+
+                    replacement_row = list(row)
 
             # split out rows with multiple segment/offsets into replacement and new rows
             for k in range(0, len(df["from"])):
@@ -94,7 +121,8 @@ if __name__ == "__main__":
                     [m1, m2] = m.split("\r", 1)
 
                     replacement_row = [p, s, f2, t2, sc, m1, mu, a, fseg, foff, tseg, toff]
-                    new_row = [p, s, f2, t2, sc, m2, mu, a, fs, fo, ts, to]
+                    # fmt: off
+                    new_row =         [p, s, f2, t2, sc, m2, mu, a, fs, fo, ts, to]
 
                     for a in range(0, len(replacement_row)):
                         df.loc[k, a] = replacement_row[a]
