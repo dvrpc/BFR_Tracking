@@ -24,9 +24,7 @@ conda env update -f environment.yml
 
 ## Running scripts
 
-To run any of the scripts in this repo, activate the conda environment and then run the command `python PATH/TO/FILE.py`
-
-For example:
+To run any of the scripts in this repo, activate the conda environment and then run the `python` command followed by the path to the file. For example:
 
 ```
 conda activate bfr_tracking
