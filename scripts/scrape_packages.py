@@ -95,12 +95,19 @@ def extract_data_from_columns(df: pd.DataFrame) -> pd.DataFrame:
     columns as needed, and returns the dataframe.
     """
     # # parse out columns for easier comparison with data tables
-    # df["sr"] = df["SR_name"].str.split("\r", n=1, expand=True)[0]
-    # df["sr"] = df["sr"].str[3:]
-    # df["name"] = df["SR_name"].str.split("\r", n=1, expand=True)[1]
-    # df["muni1"] = df["muni"].str.split(",", expand=True)[0]
-    # df["muni2"] = df["muni"].str.split(",", expand=True)[1]
-    # df["muni3"] = df["muni"].str.split(",", expand=True)[2]
+    df["sr"] = df["SR_name"].str.split("\r", n=1, expand=True)[0]
+    df["sr"] = df["sr"].str[3:]
+    df["name"] = df["SR_name"].str.split("\r", n=1, expand=True)[1]
+
+    # the municipality list is of variable length, depending on file.
+    # this code ensures there's 3 muni columns, regardless of source data
+    muni_list = df["muni"].str.split(",", expand=True)
+    for col_idx in muni_list.columns:
+        df[f"muni{col_idx + 1}"] = muni_list[col_idx]
+
+    missing_columns = set(muni_list.columns).symmetric_difference(set(range(3)))
+    for col_idx in missing_columns:
+        df[f"muni{col_idx + 1}"] = ""
 
     # parse out segment/offset from 'from' and 'to' columns for mapping
     df[["fsegment", "from"]] = df["from"].str.split("\r", n=1, expand=True)

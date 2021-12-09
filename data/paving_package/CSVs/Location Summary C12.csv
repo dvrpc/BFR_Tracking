@@ -1,22 +1,22 @@
-project_num,SR_name,from,to,scope,miles,muni,adt,fsegment,foffset,tsegment,toffset
-1.0,SR 0001 Kennett Oxford BP (NB),Maryland State Line,Tweed Bridge / 815' S. of Hopewell Rd Overpass,"Mill & 1 1/2"" Overlay",4.18,W. Nottingham E. Nottingham,"7,407",0010,0000,0090,2478
-2.0,SR 0272 Chrome Rd / Christine Rd East,Maryland State Line,Lancaster Co. Line,"Mill & 1 1/2"" Overlay",5.92,W. Nottingham E. Nottingham,"9,726",0010,0000,0114,1627
-3.0,SR 0322 West Chester BP,Downingtown Pk /,W. Chester BP / SR 0202,"Mill & 1 1/2"" Overlay",2.89,"W. Goshen, E. Bradford","14,953",0490,0000,0570,1760
-3.0,SR 0322 West Chester BP,Downingtown Pk /,W. Chester BP / SR 0202,"Mill & 1 1/2"" Overlay",0.64,"W. Goshen, E. Bradford","14,953",0521,0000,0571,1933
-4.0,SR 0724 Schuylkill Rd,Whartnaby St,Park Rd / Hill Church Rd / SR 1041,"Mill & 1 1/2"" Overlay",0.33,"N. Coventry, E. Vincent, E. Coventry","12,002",0043,0000,0043,1766
-4.0,SR 0724 Schuylkill Rd,0043/0000 Whartnaby St,0043/1766 Park Rd / Hill Church Rd / SR 1041,"Mill & 1 1/2"" Overlay",7.39 0.33,"N. Coventry, E. Vincent, E. Coventry","12,002",0042,0000,0192,2826
-5.0,SR 1010 Swedesford Rd,Valley Forge Rd / SR 0252,W. valley Rd,"Mill & 1 1/2"" Overlay",0.62,Tredyffrin,"13,189",0010,0000,0020,0400
-6.0,SR 1036 Pothouse Rd,Kimberton Rd / SR 0113,Haloowell Ave / State Rd / SR 0029,"Mill & 1 1/2"" Overlay",1.77,"Schuylkill, E. pikeland","14,158",0010,0000,0030,2458
-7.0,SR 2007 Westtown Rd,Del. Co. Line,Old Westtown Rd,"Mill & 1 1/2"" Overlay",3.71,"Westtown, W. Goshen, Thornbury","9,314",0010,0000,0060,2652
-8.0,SR 2019 Newtown Rd,Del. Co. Line,Sugartown Rd / SR 2026,"Mill & 1 1/2"" Overlay",1.51,Easttown,"6,707",0010,0000,0030,2727
-9.0,SR 3002 Chrome Rd,Barnsley Rd / SR 3107 / Christine Rd / SR 0272,State Rd / SR 3004,"Mill & 1 1/2"" Overlay",2.72,"Elk Twp., E. Nottingham",632,0010,0000,0050,1657
-10.0,SR 3004 State Rd,Maryland State Line,Big Elk Creek Bridge,"Mill & 1 1/2"" Overlay",2.83,"Elk Twp.,","1,096",0010,0000,0050,2873
-11.0,SR 3019 Spring Mill Rd,Burnt Mill Rd / SR 3038,Norway Rd,"Mill & 1 1/2"" Overlay",1.00,Kennett,431,0010,0000,0020,3607
-12.0,SR 3021 Parkersville Rd,Baltimore Pk / SR 0001,Street Rd / SR 0926,"Mill & 1 1/2"" Overlay",1.23,Pennsbury,"1,981",0010,0000,0030,2412
-13.0,SR 3038 Burnt Mill Rd,Old Kennett Rd / SR 3036,Delaware State line,"Mill & 1 1/2"" Overlay",1.85,"Pennsbury, Kennett",527,0010,0000,0040,3345
-14.0,SR 3056 Doe Run Station Rd,Gum Tree Rd / SR 3043,Doe Station Rd (T370),"Mill & 1 1/2"" Overlay",0.70,Highland,313,0080,0000,0080,3670
-15.0,SR 3057 Bradford Ave,Downingtown Pk / SR 0322,Glenside Rd / SR 3053,"Mill & 1 1/2"" Overlay",0.70,"Downingtown, W. Bradford","3,210",0010,0000,0010,3695
-16.0,SR 3061 Quarry Rd,Valley Creek Rd,Lancaster Ave / SR 3070,"Mill & 1 1/2"" Overlay",1.45,E. Caln,"11,443",0110,0000,0130,1564
-16.0,SR 3061 Quarry Rd,Valley Creek Rd,Lancaster Ave / SR 3070,"Mill & 1 1/2"" Overlay",0.30,E. Caln,"11,443",0131,0000,0131,1573
-17.0,SR 4017 Rock Raymond Rd,Horse Shoe Pk / SR 0322,Dowlin Forge Rd / SR 4004,"Mill & 1 1/2"" Overlay",1.93,"E. Brandywine, Caln","2,887",0010,0000,0030,2933
-,,,,,,,,,,,
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 0001 Kennett Oxford BP (NB),Maryland State Line,Tweed Bridge / 815' S. of Hopewell Rd Overpass,"Mill & 1 1/2"" Overlay",4.18,W. Nottingham E. Nottingham,"7,407",0001,Kennett Oxford BP (NB),W. Nottingham E. Nottingham,,,0010,0000,0090,2478
+2.0,SR 0272 Chrome Rd / Christine Rd East,Maryland State Line,Lancaster Co. Line,"Mill & 1 1/2"" Overlay",5.92,W. Nottingham E. Nottingham,"9,726",0272,Chrome Rd / Christine Rd East,W. Nottingham E. Nottingham,,,0010,0000,0114,1627
+3.0,SR 0322 West Chester BP,Downingtown Pk /,W. Chester BP / SR 0202,"Mill & 1 1/2"" Overlay",2.89,"W. Goshen, E. Bradford","14,953",0322,West Chester BP,W. Goshen, E. Bradford,,0490,0000,0570,1760
+3.0,SR 0322 West Chester BP,Downingtown Pk /,W. Chester BP / SR 0202,"Mill & 1 1/2"" Overlay",0.64,"W. Goshen, E. Bradford","14,953",0322,West Chester BP,W. Goshen, E. Bradford,,0521,0000,0571,1933
+4.0,SR 0724 Schuylkill Rd,Whartnaby St,Park Rd / Hill Church Rd / SR 1041,"Mill & 1 1/2"" Overlay",0.33,"N. Coventry, E. Vincent, E. Coventry","12,002",0724,Schuylkill Rd,N. Coventry, E. Vincent, E. Coventry,0043,0000,0043,1766
+4.0,SR 0724 Schuylkill Rd,0043/0000 Whartnaby St,0043/1766 Park Rd / Hill Church Rd / SR 1041,"Mill & 1 1/2"" Overlay",7.39 0.33,"N. Coventry, E. Vincent, E. Coventry","12,002",0724,Schuylkill Rd,N. Coventry, E. Vincent, E. Coventry,0042,0000,0192,2826
+5.0,SR 1010 Swedesford Rd,Valley Forge Rd / SR 0252,W. valley Rd,"Mill & 1 1/2"" Overlay",0.62,Tredyffrin,"13,189",1010,Swedesford Rd,Tredyffrin,,,0010,0000,0020,0400
+6.0,SR 1036 Pothouse Rd,Kimberton Rd / SR 0113,Haloowell Ave / State Rd / SR 0029,"Mill & 1 1/2"" Overlay",1.77,"Schuylkill, E. pikeland","14,158",1036,Pothouse Rd,Schuylkill, E. pikeland,,0010,0000,0030,2458
+7.0,SR 2007 Westtown Rd,Del. Co. Line,Old Westtown Rd,"Mill & 1 1/2"" Overlay",3.71,"Westtown, W. Goshen, Thornbury","9,314",2007,Westtown Rd,Westtown, W. Goshen, Thornbury,0010,0000,0060,2652
+8.0,SR 2019 Newtown Rd,Del. Co. Line,Sugartown Rd / SR 2026,"Mill & 1 1/2"" Overlay",1.51,Easttown,"6,707",2019,Newtown Rd,Easttown,,,0010,0000,0030,2727
+9.0,SR 3002 Chrome Rd,Barnsley Rd / SR 3107 / Christine Rd / SR 0272,State Rd / SR 3004,"Mill & 1 1/2"" Overlay",2.72,"Elk Twp., E. Nottingham",632,3002,Chrome Rd,Elk Twp., E. Nottingham,,0010,0000,0050,1657
+10.0,SR 3004 State Rd,Maryland State Line,Big Elk Creek Bridge,"Mill & 1 1/2"" Overlay",2.83,"Elk Twp.,","1,096",3004,State Rd,Elk Twp.,,,0010,0000,0050,2873
+11.0,SR 3019 Spring Mill Rd,Burnt Mill Rd / SR 3038,Norway Rd,"Mill & 1 1/2"" Overlay",1.00,Kennett,431,3019,Spring Mill Rd,Kennett,,,0010,0000,0020,3607
+12.0,SR 3021 Parkersville Rd,Baltimore Pk / SR 0001,Street Rd / SR 0926,"Mill & 1 1/2"" Overlay",1.23,Pennsbury,"1,981",3021,Parkersville Rd,Pennsbury,,,0010,0000,0030,2412
+13.0,SR 3038 Burnt Mill Rd,Old Kennett Rd / SR 3036,Delaware State line,"Mill & 1 1/2"" Overlay",1.85,"Pennsbury, Kennett",527,3038,Burnt Mill Rd,Pennsbury, Kennett,,0010,0000,0040,3345
+14.0,SR 3056 Doe Run Station Rd,Gum Tree Rd / SR 3043,Doe Station Rd (T370),"Mill & 1 1/2"" Overlay",0.70,Highland,313,3056,Doe Run Station Rd,Highland,,,0080,0000,0080,3670
+15.0,SR 3057 Bradford Ave,Downingtown Pk / SR 0322,Glenside Rd / SR 3053,"Mill & 1 1/2"" Overlay",0.70,"Downingtown, W. Bradford","3,210",3057,Bradford Ave,Downingtown, W. Bradford,,0010,0000,0010,3695
+16.0,SR 3061 Quarry Rd,Valley Creek Rd,Lancaster Ave / SR 3070,"Mill & 1 1/2"" Overlay",1.45,E. Caln,"11,443",3061,Quarry Rd,E. Caln,,,0110,0000,0130,1564
+16.0,SR 3061 Quarry Rd,Valley Creek Rd,Lancaster Ave / SR 3070,"Mill & 1 1/2"" Overlay",0.30,E. Caln,"11,443",3061,Quarry Rd,E. Caln,,,0131,0000,0131,1573
+17.0,SR 4017 Rock Raymond Rd,Horse Shoe Pk / SR 0322,Dowlin Forge Rd / SR 4004,"Mill & 1 1/2"" Overlay",1.93,"E. Brandywine, Caln","2,887",4017,Rock Raymond Rd,E. Brandywine, Caln,,0010,0000,0030,2933
+,,,,,,,,,,,,,,,,
