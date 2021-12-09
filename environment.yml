@@ -16,3 +16,6 @@ dependencies:
   - black
   - flake8
   - jupyterlab
+  - pip
+  - pip:
+      - --editable .
