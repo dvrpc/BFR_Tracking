@@ -13,7 +13,7 @@ from pathlib import Path
 import tabula
 import pandas as pd
 from PyPDF2 import PdfFileReader
-
+from sqlalchemy import create_engine
 
 def remove_returns_from_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -188,6 +188,8 @@ def parse_single_pdf(filepath: Path, output_folder: Path) -> pd.DataFrame:
     output_filepath = output_folder / f"{filepath.stem}.csv"
 
     cleaned_df.to_csv(output_filepath, index=False)
+    engine = create_engine('postgresql://postgres:root@localhost:5432/bfr_tracking')
+    cleaned_df.to_sql(f"{filepath.stem}", engine)
 
 
 if __name__ == "__main__":
