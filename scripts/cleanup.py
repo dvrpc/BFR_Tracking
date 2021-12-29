@@ -24,7 +24,7 @@ sql = """ DROP TABLE IF EXISTS %s; """
 
 for filepath in raw_packages.rglob("*.pdf"):
     cursor.execute(sql, filepath.stem)
-    
+
 
 # delete interim CSV files
 for p in Path("data\paving_package\CSVs").rglob('*.csv'):
@@ -32,8 +32,3 @@ for p in Path("data\paving_package\CSVs").rglob('*.csv'):
         p.unlink()
     except OSError as e:
         print("Error: %s : %s " % (p, e.strerror))
-
-
-
-
-

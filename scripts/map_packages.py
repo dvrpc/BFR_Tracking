@@ -8,6 +8,7 @@ Report status and package number fields are added.
 
 """
 
+from __future__ import annotations
 import geopandas as gpd
 from shapely import geometry, wkt
 from sqlalchemy import create_engine
@@ -83,8 +84,11 @@ def write_results(gdf, package_name):
     package = package_name.split("Summary", 1)[1]
     #gdf.to_postgis("%s_mappedreport" % package, con=engine, if_exists='replace')
     #print("To database: Complete")
-    gdf.to_file("D:/dvrpc_shared/BFR_Tracking/data/%s_mappedreport.shp" % package)
+    gdf.to_file("D:/dvrpc_shared/BFR_Tracking/data/shapefiles/%s_mappedreport.shp" % package)
     print("To shapefile: Complete")
+    gdf.to_file("D:/dvrpc_shared/BFR_Tracking/data/geojson/%s_mappedreport" % package, driver="GeoJSON")
+    print("To GeoJSON: Complete")
+
 
 if __name__ == "__main__":
 

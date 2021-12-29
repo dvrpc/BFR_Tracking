@@ -9,11 +9,11 @@ A copy of the output table is also included in the database.
 
 """
 
+from __future__ import annotations
 import pandas as pd
 from sqlalchemy import create_engine
 import numpy as np
 from pathlib import Path
-from __future__ import annotations
 import db_connections
 
 def create_df_from_query(package_name):
@@ -149,8 +149,8 @@ def report_status(package_name):
     #subset to include only necessary fields
     joined = joined[['project', 'GISID', 'CALENDAR_YEAR', 'stateroute', 'name', 'miles', 'muni1', 'muni2', 'muni3', 'ReportStatus']]
 
+    joined.to_sql("%s_report" % package_name, engine)
     joined.to_csv("D:/dvrpc_shared/BFR_Tracking/data/paving_package/Reports/%s_report.csv" % package_name , index=False)
-	joined.to_sql("%s_report" % package_name, engine)
 
 
 if __name__ == "__main__":

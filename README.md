@@ -23,16 +23,22 @@ conda env update -f environment.yml
 ```
 ## File Setup
 
-Upon receipt of new paving packages from PennDOT, save the PDF tables in: ` BFR/Tracking/data/paving_package/PDFs `. PDF files names should remain unchanged and in the following format: `Location Summary A##` where `A` represents the first letter of the county name
+Upon receipt of new paving packages from PennDOT, save the PDF tables in: ` BFR/Tracking/data/paving_package/PDFs `. 
+
+PDF files names should remain unchanged and in the following format: `Location Summary A##` where `A` represents the first letter of the county name
+
 Report CVSs are saved in: ` BFR/Tracking/data/paving_package/Reports `
+
 Output shapefiles are saved: ` BFR/Tracking/data/paving_package/shapefiles `
 
 ## Running Scripts
 
-To run any of the scripts in this repo, activate the conda environment and then run the `python` command followed by the path to the file. For example:
+To run any of the scripts in this repo, activate the conda environment, change directory to the project folder, and then run the `python` command followed by the path to the file. For example:
 
 ```
-conda activate bfr_tracking
+conda activate bfr_tracking 
+d:
+cd dvrpc_shared/BFR_Tracking
 python ./scripts/scrape_packages.py
 ```
 
