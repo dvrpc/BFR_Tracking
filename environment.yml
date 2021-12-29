@@ -19,6 +19,7 @@ dependencies:
   - python-docx
   - cx-Oracle
   - numpy
+  - folium
   - pip
   - pip:
       - --editable .
