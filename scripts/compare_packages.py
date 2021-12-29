@@ -14,10 +14,11 @@ import pandas as pd
 from sqlalchemy import create_engine
 import numpy as np
 from pathlib import Path
-import db_connections
+import env_vars as ev
+
 
 def create_df_from_query(package_name):
-	compare = """
+    compare = """
 	with tblA as (
 	select 
 		ls.project_num as Project,
@@ -57,71 +58,82 @@ def create_df_from_query(package_name):
 	on tblA.project = tblB.project;
 	"""
 
-	input_df = pd.read_sql(compare % package_name, con = engine)
-	input_df['ReportStatus'] = np.nan
+    input_df = pd.read_sql(compare % package_name, con=engine)
+    input_df["ReportStatus"] = np.nan
 
-	return input_df
+    return input_df
+
 
 def flag_missing_records(df):
-    missing_df = df[df['GISID'].isnull()]
-    missing_df['ReportStatus'].fillna('Not Evaluated', inplace=True)
+    missing_df = df[df["GISID"].isnull()]
+    missing_df["ReportStatus"].fillna("Not Evaluated", inplace=True)
 
     return missing_df
 
+
 def single_records(df):
-    nr = df[df['count'] == 1]
-    notrepeated_df = nr[nr['SOURCE'].notna()]
-    #change to status eventually; once field is added
-    #may need to deal with status = not screened here too
-    notrepeated_df['ReportStatus'].fillna('Not Repeated', inplace=True)
+    nr = df[df["count"] == 1]
+    notrepeated_df = nr[nr["SOURCE"].notna()]
+    # change to status eventually; once field is added
+    # may need to deal with status = not screened here too
+    notrepeated_df["ReportStatus"].fillna("Not Repeated", inplace=True)
 
     return notrepeated_df
 
+
 # series of functions to address repeated records
 def identify_repeats(df):
-    repeat = df[df['count'] > 1]
-    repeated_df =  repeat[repeat['SOURCE'].notna()]
+    repeat = df[df["count"] > 1]
+    repeated_df = repeat[repeat["SOURCE"].notna()]
     return repeated_df
+
 
 def find_latest_source(df):
     endyears = []
-    for item in df['SOURCE'].unique():
+    for item in df["SOURCE"].unique():
         endyears.append(int(item[-4:]))
     maxyear = max(endyears)
     return maxyear
 
+
 def find_newest_repeat(df, year):
-    newest_repeat = df[df['SOURCE'].str.endswith(str(year))]
+    newest_repeat = df[df["SOURCE"].str.endswith(str(year))]
     return newest_repeat
 
+
 def flag_still_repeated(df):
-    still_repeated = df['project'][df['project'].duplicated()].unique()
+    still_repeated = df["project"][df["project"].duplicated()].unique()
     return still_repeated
 
+
 def keep_newest(df, list_of_dubs):
-    touse = df[~df['project'].isin(list_of_dubs)]
+    touse = df[~df["project"].isin(list_of_dubs)]
     return touse
 
+
 def keep_segments_from_same_year(df, list_of_dubs):
-    tofix = df[df['project'].isin(list_of_dubs)]
-    keepboth = tofix[tofix.duplicated(subset=['project', 'CALENDAR_YEAR'], keep=False)]
+    tofix = df[df["project"].isin(list_of_dubs)]
+    keepboth = tofix[tofix.duplicated(subset=["project", "CALENDAR_YEAR"], keep=False)]
     return keepboth
 
+
 def keep_only_admin_selected(df, list_of_dubs):
-    tofix = df[df['project'].isin(list_of_dubs)]
-    keepone = tofix[~tofix.duplicated(subset=['project', 'CALENDAR_YEAR'], keep=False)]
-    kept =  keepone[keepone['ADMINSELECTED'] == 'Y']
+    tofix = df[df["project"].isin(list_of_dubs)]
+    keepone = tofix[~tofix.duplicated(subset=["project", "CALENDAR_YEAR"], keep=False)]
+    kept = keepone[keepone["ADMINSELECTED"] == "Y"]
     return kept
+
 
 def rebuild_df(frame1, frame2, frame3):
     frames = [frame1, frame2, frame3]
     combine = pd.concat(frames)
-    #change to status eventually; once field is added
-    #may need to deal with status = not screened here too
-    combine['ReportStatus'].fillna('Repeated', inplace=True)
+    # change to status eventually; once field is added
+    # may need to deal with status = not screened here too
+    combine["ReportStatus"].fillna("Repeated", inplace=True)
     return combine
 
-def clean_repeated_records(df):    
+
+def clean_repeated_records(df):
     repeats = identify_repeats(df)
     latest_source = find_latest_source(repeats)
 
@@ -135,31 +147,52 @@ def clean_repeated_records(df):
     cleaned_repeats = rebuild_df(use1, use2, use3)
     return cleaned_repeats
 
+
 # function to combine everything
 def report_status(package_name):
     df = create_df_from_query(package_name)
     a = flag_missing_records(df)
     b = single_records(df)
     c = clean_repeated_records(df)
-    
+
     allframes = [a, b, c]
     joined = pd.concat(allframes)
-    joined = joined.sort_values(['project'], ascending = (True))
+    joined = joined.sort_values(["project"], ascending=(True))
 
-    #subset to include only necessary fields
-    joined = joined[['project', 'GISID', 'CALENDAR_YEAR', 'stateroute', 'name', 'miles', 'muni1', 'muni2', 'muni3', 'ReportStatus']]
+    # subset to include only necessary fields
+    joined = joined[
+        [
+            "project",
+            "GISID",
+            "CALENDAR_YEAR",
+            "stateroute",
+            "name",
+            "miles",
+            "muni1",
+            "muni2",
+            "muni3",
+            "ReportStatus",
+        ]
+    ]
 
     joined.to_sql("%s_report" % package_name, engine)
-    joined.to_csv("D:/dvrpc_shared/BFR_Tracking/data/paving_package/Reports/%s_report.csv" % package_name , index=False)
+    joined.to_csv(
+        "D:/dvrpc_shared/BFR_Tracking/data/paving_package/Reports/%s_report.csv"
+        % package_name,
+        index=False,
+    )
+    print("Report Generated")
+
+
+def main():
+    project_folder = Path.cwd().parent
+    data_folder = project_folder / "data"
+    raw_packages = data_folder / "paving_package/PDFs"
+
+    for filepath in raw_packages.rglob("*.pdf"):
+        report_status(filepath.stem)
 
 
 if __name__ == "__main__":
-
-	engine = create_engine(db_connections.postgres_uri)
-
-	project_folder = Path.cwd().parent
-	data_folder = project_folder / "data"
-	raw_packages = data_folder / "paving_package/PDFs"
-
-	for filepath in raw_packages.rglob("*.pdf"):
-		report_status(filepath.stem)
+    engine = create_engine(ev.POSTGRES_URL)
+    main()

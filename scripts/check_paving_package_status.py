@@ -8,15 +8,17 @@ This script does NOT run the cleanup script -
 that should be run seperately after results are checked.
 
 """
-
-import import_oracle, scrape_packages, compare_packages, map_packages
+from import_oracle import main as importer
+from scrape_packages import main as scrape
+from compare_packages import main as compare
+from map_packages import main as mapper
 
 print("Importing from Oracle")
-exec(open(import_oracle.py).read())
-print("Scraping Packages")
-exec(open(scrape_packages.py).read())
-print("Compating Packages")
-exec(open(compare_packages.py).read())
-print("Mapping Packages")
-exec(open(map_packages.py).read())
-print("Complete")
+importer()
+print("Scraping Paving Packages")
+scrape()
+print("Comparing Pacakges to 5-year Plan")
+compare()
+print("Mapping Paving Package Segments")
+mapper()
+print("Complete!")

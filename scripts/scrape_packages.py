@@ -9,11 +9,14 @@ for any PDF rows that contain two segments instead of one.
 """
 
 from __future__ import annotations
+from os import replace
 from pathlib import Path
 import tabula
 import pandas as pd
 from PyPDF2 import PdfFileReader
 from sqlalchemy import create_engine
+import env_vars as ev
+
 
 def remove_returns_from_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -39,7 +42,9 @@ def drop_total_row_if_exists(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def sort_df_by_project_id(df: pd.DataFrame, sort_column: str = "project_num") -> pd.DataFrame:
+def sort_df_by_project_id(
+    df: pd.DataFrame, sort_column: str = "project_num"
+) -> pd.DataFrame:
     """
     After adding new rows, we want to be able to sort the resulting table
     before writing it to file.
@@ -65,7 +70,16 @@ def get_number_of_pages_in_pdf(filepath: Path | str) -> int:
 def read_single_page_from_pdf(
     filepath: Path | str,
     page_number: int,
-    column_names: list = ["project_num", "SR_name", "from", "to", "scope", "miles", "muni", "adt"],
+    column_names: list = [
+        "project_num",
+        "SR_name",
+        "from",
+        "to",
+        "scope",
+        "miles",
+        "muni",
+        "adt",
+    ],
 ) -> pd.DataFrame:
     """
     - Read a specific page of a PDF
@@ -188,14 +202,18 @@ def parse_single_pdf(filepath: Path, output_folder: Path) -> pd.DataFrame:
     output_filepath = output_folder / f"{filepath.stem}.csv"
 
     cleaned_df.to_csv(output_filepath, index=False)
-    engine = create_engine('postgresql://postgres:root@localhost:5432/bfr_tracking')
-    cleaned_df.to_sql(f"{filepath.stem}", engine)
+    engine = create_engine(ev.POSTGRES_URL)
+    cleaned_df.to_sql(f"{filepath.stem}", engine, if_exists="replace")
 
 
-if __name__ == "__main__":
+def main():
     data_folder = Path("./data")
     paving_package = data_folder / "paving_package"
     output_folder = paving_package / "CSVs"
 
     for filepath in paving_package.rglob("*.pdf"):
         parse_single_pdf(filepath, output_folder)
+
+
+if __name__ == "__main__":
+    main()

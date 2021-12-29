@@ -1,0 +1,16 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 1013 Springfield Rd,Sproul Rd / SR 0320,West Chester Pk / SR 0003,"Mill & 1 1/2"" Overlay",0.80,Marple,"15,000",1013,Springfield Rd,Marple,,,0010,0000,0020,1115
+1.0,SR 1013 Springfield Rd,Sproul Rd / SR 0320,West Chester Pk / SR 0003,"Mill & 1 1/2"" Overlay",0.82,Marple,"15,000",1013,Springfield Rd,Marple,,,0011,0000,0021,1170
+2.0,SR 2002 2nd Street,Industrial Hwy / SR 0291,Fourth Ave / SR 2029,"Mill & 1 1/2"" Overlay",1.53,Tinicum,"5,800",2002,2nd Street,Tinicum,,,0010,0000,0040,2604
+3.0,SR 2009 Springfield Rd,Netherwood Dr.,Sproul Rd / SR 0320,"Mill & 1 1/2"" Overlay",2.48,"Marple, Springfield","18,843",2009,Springfield Rd,Marple, Springfield,,0080,0000,0130,1670
+4.0,SR 2013 Clifton Ave,Hook Rd / SR 2015,Springfield Rd / SR 2009,"Mill & 1 1/2"" Overlay",2.26,"Sharon Hill B., Collingdale, Aldan","9,000",2013,Clifton Ave,Sharon Hill B., Collingdale, Aldan,0010,0000,0060,2830
+5.0,SR 2016 Baltimore Pk,0061/0000 Providence Rd / SR 0252,0141/3461 Oak Ave / SR 2015,"Mill & 1 1/2"" Overlay",4.36 4.35,"Swarthmore, Morton, Media","34,000",2016,Baltimore Pk,Swarthmore, Morton, Media,0060,0000,0140,3471
+5.0,SR 2016 Baltimore Pk,Providence Rd / SR 0252,Oak Ave / SR 2015,"Mill & 1 1/2"" Overlay",4.35,"Swarthmore, Morton, Media","34,000",2016,Baltimore Pk,Swarthmore, Morton, Media,0061,0000,0141,3461
+6.0,SR 2028 Morton Ave,Fourth St / SR 0291,Ninth St / SR 0013,"Mill & 1 1/2"" Overlay",0.31,Chester City,"7,600",2028,Morton Ave,Chester City,,,0010,0000,0010,1636
+7.0,SR 2031 Sellers Ave,Fairmount Rd,Ward Ave / Ridley Ave / SR 2004,"Mill & 1 1/2"" Overlay",0.64,"Ridley Park, Ridley","9,300",2031,Sellers Ave,Ridley Park, Ridley,,0034,0000,0040,2186
+8.0,SR 2037 Crum Creek Rd,Beatty Rd / SR 2018,State Rd / SR 1008,"Mill & 1 1/2"" Overlay",1.09,"U. Providence, Nether Providence",328,2037,Crum Creek Rd,U. Providence, Nether Providence,,0010,0000,0020,2785
+9.0,SR 3003 Turner Rd,Providence Rd / SR 0252,Baltimore Pk / SR 2016,"Mill & 1 1/2"" Overlay",1.14,Nether Providence,"5,765",3003,Turner Rd,Nether Providence,,,0090,00000,0100,3847
+10.0,SR 3011 Blueball Ave,Tenth St / SR 0013,Chichester Ave / SR 3009,"Mill & 1 1/2"" Overlay",1.26,"Marcus Hook, U. Chichester, L. Chichester","2,245",3011,Blueball Ave,Marcus Hook, U. Chichester, L. Chichester,0010,0000,0030,1191
+11.0,SR 3013 Chestnut St,Providence Rd / SR 0320,Brookhaven Rd / SR 3003,"Mill & 1 1/2"" Overlay",1.41,"Chester City, Nether Providence","7,688",3013,Chestnut St,Chester City, Nether Providence,,0010,0000,0030,3308
+12.0,SR 3014 Mill Rd,Naamans Creek Rd / SR 0491,Bethel Rd / SR 3017,"Mill & 1 1/2"" Overlay",0.60,U. Chichester,"2,328",3014,Mill Rd,U. Chichester,,,0010,0000,0010,3167
+13.0,SR 3016 Larkin Rd,Naamans Creek Rd / SR 0491,Ramp A1 Rd / SR 0322,"Mill & 1 1/2"" Overlay",1.99,U. Chichester,"8,509",3016,Larkin Rd,U. Chichester,,,0010,0000,0060,1860
