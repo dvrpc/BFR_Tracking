@@ -13,8 +13,8 @@ from scrape_packages import main as scrape
 from compare_packages import main as compare
 from map_packages import main as mapper
 
-print("Importing from Oracle")
-importer()
+# print("Importing from Oracle")
+# importer()
 print("Scraping Paving Packages")
 scrape()
 print("Comparing Pacakges to 5-year Plan")

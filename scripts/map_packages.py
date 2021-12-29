@@ -15,6 +15,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import env_vars as ev
+from env_vars import ENGINE
 
 
 county_lookup = {"B": 9, "C": 15, "D": 23, "M": 46, "P": 51}
@@ -79,7 +80,7 @@ def map_package(package_name):
 	on d.project_num = ls.project;
 	"""
         % (package_name, code, report_table),
-        con=engine,
+        con=ENGINE,
         geom_col="geometry",
     )
 
@@ -90,22 +91,19 @@ def map_package(package_name):
 
 def write_results(gdf, package_name):
     package = package_name.split("Summary", 1)[1]
-    # gdf.to_postgis("%s_mappedreport" % package, con=engine, if_exists='replace')
+    # gdf.to_postgis(fr"{package}_mappedreport", con=ENGINE, if_exists='replace')
     # print("To database: Complete")
-    gdf.to_file(
-        "D:/dvrpc_shared/BFR_Tracking/data/shapefiles/%s_mappedreport.shp" % package
-    )
+    gdf.to_file(fr"{ev.DATA_ROOT}/shapefiles/{package}_mappedreport.shp")
     print("To shapefile: Complete")
     gdf.to_file(
-        "D:/dvrpc_shared/BFR_Tracking/data/geojson/%s_mappedreport" % package,
+        fr"{ev.DATA_ROOT}/geojson/{package}_mappedreport",
         driver="GeoJSON",
     )
     print("To GeoJSON: Complete")
 
 
 def main():
-    project_folder = Path.cwd().parent
-    data_folder = project_folder / "data"
+    data_folder = ev.DATA_ROOT
     raw_packages = data_folder / "paving_package/PDFs"
 
     for filepath in raw_packages.rglob("*.pdf"):
@@ -114,5 +112,4 @@ def main():
 
 
 if __name__ == "__main__":
-    engine = create_engine(ev.POSTGRES_URL)
     main()

@@ -15,6 +15,7 @@ from sqlalchemy import create_engine
 import numpy as np
 from pathlib import Path
 import env_vars as ev
+from env_vars import ENGINE
 
 
 def create_df_from_query(package_name):
@@ -58,7 +59,7 @@ def create_df_from_query(package_name):
 	on tblA.project = tblB.project;
 	"""
 
-    input_df = pd.read_sql(compare % package_name, con=engine)
+    input_df = pd.read_sql(compare % package_name, con=ENGINE)
     input_df["ReportStatus"] = np.nan
 
     return input_df
@@ -175,18 +176,15 @@ def report_status(package_name):
         ]
     ]
 
-    joined.to_sql("%s_report" % package_name, engine)
+    joined.to_sql("%s_report" % package_name, ENGINE)
     joined.to_csv(
-        "D:/dvrpc_shared/BFR_Tracking/data/paving_package/Reports/%s_report.csv"
-        % package_name,
-        index=False,
+        fr"{ev.DATA_ROOT}/paving_package/Reports/{package_name}_report.csv", index=False
     )
     print("Report Generated")
 
 
 def main():
-    project_folder = Path.cwd().parent
-    data_folder = project_folder / "data"
+    data_folder = ev.DATA_ROOT
     raw_packages = data_folder / "paving_package/PDFs"
 
     for filepath in raw_packages.rglob("*.pdf"):
@@ -194,5 +192,4 @@ def main():
 
 
 if __name__ == "__main__":
-    engine = create_engine(ev.POSTGRES_URL)
     main()

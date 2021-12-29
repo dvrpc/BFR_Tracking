@@ -16,40 +16,42 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 import env_vars as ev
+from env_vars import ENGINE
+
 
 def main():
     today = date.today()
     print(today)
 
-    changes = r"D:\dvrpc_shared\BFR_Tracking\data\from_oracle\db_pull_%s.csv" % today
+    changes = fr"{ev.DATA_ROOT}\from_oracle\db_pull_{today}.csv"
 
-    #connect to Oracle, declare your query
+    # connect to Oracle, declare your query
     db = cx_Oracle.connect(ev.ORACLE_NAME, ev.ORACLE_PW, ev.ORACLE_HOST)
     cursor = db.cursor()
-    SQL=r"SELECT * FROM SEPADATA"
+    SQL = r"SELECT * FROM SEPADATA"
 
     ##run cursor on db, write to csv
     cursor.execute(SQL)
-    with open(changes, 'w', encoding='utf-8') as fout:
+    with open(changes, "w", encoding="utf-8") as fout:
         writer = csv.writer(fout)
-        writer.writerow([ i[0] for i in cursor.description ]) ##heading row
+        writer.writerow([i[0] for i in cursor.description])  ##heading row
         writer.writerows(cursor.fetchall())
 
     df = pd.read_csv(changes)
 
-    #create database
-    engine = create_engine(ev.POSTGRES_URL)
-    if not database_exists(engine.url):
-        create_database(engine.url)
+    # create database
+    if not database_exists(ENGINE.url):
+        create_database(ENGINE.url)
 
-    engine.execute("CREATE EXTENSION IF NOT EXISTS postgis;")
+    ENGINE.execute("CREATE EXTENSION IF NOT EXISTS postgis;")
 
-    #drop existing backup and copy previous oracle export as backup
-    engine.execute("DROP TABLE IF EXISTS from_oracle_backup; COMMIT;")
-    engine.execute("SELECT * INTO from_oracle_backup FROM from_oracle; COMMIT;")
+    # drop existing backup and copy previous oracle export as backup
+    ENGINE.execute("DROP TABLE IF EXISTS from_oracle_backup; COMMIT;")
+    ENGINE.execute("SELECT * INTO from_oracle_backup FROM from_oracle; COMMIT;")
 
-    #write dataframe to postgis, replacing old table
-    df.to_sql("from_oracle", con=engine, if_exists='replace')
+    # write dataframe to postgis, replacing old table
+    df.to_sql("from_oracle", con=ENGINE, if_exists="replace")
+
 
 if __name__ == "__main__":
     main()

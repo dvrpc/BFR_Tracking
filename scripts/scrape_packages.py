@@ -16,6 +16,7 @@ import pandas as pd
 from PyPDF2 import PdfFileReader
 from sqlalchemy import create_engine
 import env_vars as ev
+from env_vars import ENGINE
 
 
 def remove_returns_from_dataframe(df: pd.DataFrame) -> pd.DataFrame:
@@ -202,8 +203,7 @@ def parse_single_pdf(filepath: Path, output_folder: Path) -> pd.DataFrame:
     output_filepath = output_folder / f"{filepath.stem}.csv"
 
     cleaned_df.to_csv(output_filepath, index=False)
-    engine = create_engine(ev.POSTGRES_URL)
-    cleaned_df.to_sql(f"{filepath.stem}", engine, if_exists="replace")
+    cleaned_df.to_sql(f"{filepath.stem}", ENGINE, if_exists="replace")
 
 
 def main():
