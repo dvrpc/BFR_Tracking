@@ -17,6 +17,8 @@ dependencies:
   - flake8
   - jupyterlab
   - python-docx
+  - cx-Oracle
+  - numpy
   - pip
   - pip:
       - --editable .

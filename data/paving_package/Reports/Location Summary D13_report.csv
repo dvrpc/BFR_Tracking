@@ -1,0 +1,16 @@
+project,GISID,CALENDAR_YEAR,stateroute,name,miles,muni1,muni2,muni3,ReportStatus
+1.0,2394.0,2020.0,1013,Springfield Rd,0.82,Marple,,,Repeated
+1.0,2393.0,2020.0,1013,Springfield Rd,0.80,Marple,,,Repeated
+2.0,2169.0,2021.0,2002,2nd Street,1.53,Tinicum,,,Not Repeated
+3.0,2122.0,2022.0,2009,Springfield Rd,2.48,Marple, Springfield,,Not Repeated
+4.0,2173.0,2021.0,2013,Clifton Ave,2.26,Sharon Hill B., Collingdale, Aldan,Not Repeated
+5.0,2303.0,2022.0,2016,Baltimore Pk,4.36 4.35,Swarthmore, Morton, Media,Repeated
+5.0,2304.0,2022.0,2016,Baltimore Pk,4.35,Swarthmore, Morton, Media,Repeated
+6.0,352.0,2020.0,2028,Morton Ave,0.31,Chester City,,,Not Repeated
+7.0,2176.0,2021.0,2031,Sellers Ave,0.64,Ridley Park, Ridley,,Repeated
+8.0,2312.0,2022.0,2037,Crum Creek Rd,1.09,U. Providence, Nether Providence,,Not Repeated
+9.0,,,3003,Turner Rd,1.14,Nether Providence,,,Not Evaluated
+10.0,359.0,2020.0,3011,Blueball Ave,1.26,Marcus Hook, U. Chichester, L. Chichester,Not Repeated
+11.0,2181.0,2021.0,3013,Chestnut St,1.41,Chester City, Nether Providence,,Not Repeated
+12.0,2182.0,2021.0,3014,Mill Rd,0.60,U. Chichester,,,Repeated
+13.0,2183.0,2021.0,3016,Larkin Rd,1.99,U. Chichester,,,Repeated
