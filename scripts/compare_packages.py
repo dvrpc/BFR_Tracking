@@ -176,7 +176,7 @@ def report_status(package_name):
         ]
     ]
 
-    joined.to_sql("%s_report" % package_name, ENGINE)
+    joined.to_sql("%s_report" % package_name, ENGINE, if_exists="replace")
     joined.to_csv(
         fr"{ev.DATA_ROOT}/paving_package/Reports/{package_name}_report.csv", index=False
     )
@@ -184,7 +184,7 @@ def report_status(package_name):
 
 
 def main():
-    data_folder = ev.DATA_ROOT
+    data_folder = Path(ev.DATA_ROOT)
     raw_packages = data_folder / "paving_package/PDFs"
 
     for filepath in raw_packages.rglob("*.pdf"):

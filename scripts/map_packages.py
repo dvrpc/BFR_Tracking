@@ -90,20 +90,20 @@ def map_package(package_name):
 
 
 def write_results(gdf, package_name):
-    package = package_name.split("Summary", 1)[1]
+    package = package_name.split("Summary ", 1)[1]
     # gdf.to_postgis(fr"{package}_mappedreport", con=ENGINE, if_exists='replace')
     # print("To database: Complete")
     gdf.to_file(fr"{ev.DATA_ROOT}/shapefiles/{package}_mappedreport.shp")
     print("To shapefile: Complete")
     gdf.to_file(
-        fr"{ev.DATA_ROOT}/geojson/{package}_mappedreport",
+        fr"{ev.DATA_ROOT}/geojson/{package}_mappedreport.geojson",
         driver="GeoJSON",
     )
     print("To GeoJSON: Complete")
 
 
 def main():
-    data_folder = ev.DATA_ROOT
+    data_folder = Path(ev.DATA_ROOT)
     raw_packages = data_folder / "paving_package/PDFs"
 
     for filepath in raw_packages.rglob("*.pdf"):

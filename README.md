@@ -39,7 +39,7 @@ To run any of the scripts in this repo, activate the conda environment, change d
 conda activate bfr_tracking 
 d:
 cd dvrpc_shared/BFR_Tracking
-python ./scripts/scrape_packages.py
+python /scripts/{script_name}.py
 ```
 
 ## Cleanup Script
