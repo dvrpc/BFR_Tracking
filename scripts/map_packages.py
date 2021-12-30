@@ -6,6 +6,9 @@ This script runs a SQL query to map package segments
 on the PennDOT RMS road network using segments numbers.
 Report status and package number fields are added.
 
+TO DO
+- update GISID fiels with STATUS field once available
+
 """
 
 from __future__ import annotations
@@ -13,6 +16,8 @@ import geopandas as gpd
 import pandas as pd
 import numpy as np
 from pathlib import Path
+
+from sqlalchemy.engine.base import TwoPhaseTransaction
 import env_vars as ev
 from env_vars import ENGINE
 
@@ -30,11 +35,10 @@ def lookup_county_code(letter):
 
 
 def map_package(package_name):
-    report_table = package_name + "_report"
     code = lookup_county_code(parse_county_identifier(package_name))
 
     results = gpd.GeoDataFrame.from_postgis(
-        """
+        fr"""
 	with tblA AS(
 		select 
 			project_num,
@@ -45,7 +49,7 @@ def map_package(package_name):
 			muni3,
 			cast(fsegment as numeric) as sf,
 			cast(tsegment as numeric) as st
-		from "%s" lsc
+		from "{package_name}" lsc
 		),
 	tblB AS(
 		SELECT
@@ -54,7 +58,7 @@ def map_package(package_name):
 			CAST("SEG_BGN" AS numeric) as seg_no,
 			geometry 
 		FROM penndot_rms
-		WHERE "CTY_CODE" = '%s'
+		WHERE "CTY_CODE" = '{code}'
 		),
 	tblC AS(
 		SELECT 
@@ -70,15 +74,21 @@ def map_package(package_name):
 		FROM tblC 
 		WHERE seg_no >= sf
 		AND seg_no <= st
-		)
+		order by project_num
+	)
 	select 
-		d.*,
-		ls."ReportStatus" 
+		ms."GISID",	
+		d.project_num,
+		d.sr,
+		d.name,
+		d.muni1,
+		d.muni2,
+		d.muni3,
+		d.geometry
 	from tblD d
-	inner join "%s" ls 
-	on d.project_num = ls.project;
-	"""
-        % (package_name, code, report_table),
+	left join mapped_segments ms
+	on d.geometry = ms.geometry
+	""",
         con=ENGINE,
         geom_col="geometry",
     )
@@ -88,10 +98,162 @@ def map_package(package_name):
     return results
 
 
+def summarize_evaluted_segments(package_name):
+    code = lookup_county_code(parse_county_identifier(package_name))
+
+    results = gpd.GeoDataFrame.from_postgis(
+        fr"""
+		with tblA AS(
+			select 
+				project_num,
+				sr, 
+				name,
+				muni1,
+				muni2,
+				muni3,
+				cast(fsegment as numeric) as sf,
+				cast(tsegment as numeric) as st
+			from "{package_name}" lsc
+			),
+		tblB AS(
+			SELECT
+				"ST_RT_NO" as srno ,
+				CAST("CTY_CODE" AS numeric) as co_no,
+				CAST("SEG_BGN" AS numeric) as seg_no,
+				geometry 
+			FROM penndot_rms
+			WHERE "CTY_CODE" = '{code}'
+			),
+		tblC AS(
+			SELECT 
+				a.*,
+				b.seg_no,
+				b.geometry
+			FROM tblB b
+			LEFT OUTER JOIN tblA a
+			ON a.sr = b.srno
+			),
+		tblD AS(
+			SELECT *
+			FROM tblC 
+			WHERE seg_no >= sf
+			AND seg_no <= st
+			order by project_num
+		),
+		tblE AS( 
+		select 
+			ms."GISID",	
+			d.project_num,
+			d.sr,
+			d.name,
+			d.muni1,
+			d.muni2,
+			d.muni3,
+			d.geometry
+		from tblD d
+		left join mapped_segments ms
+		on d.geometry = ms.geometry
+		)
+		select
+			project_num,
+			sr,
+			name,
+			string_agg(distinct cast("GISID" as text), ', ') as gisids
+		from tblE
+		group by project_num, sr, name
+			""",
+        con=ENGINE,
+        geom_col="geometry",
+    )
+
+    return results
+
+
+def flag_not_evaluated_segments(package_name):
+    code = lookup_county_code(parse_county_identifier(package_name))
+
+    results = gpd.GeoDataFrame.from_postgis(
+        fr"""
+		with tblA AS(
+			select 
+				project_num,
+				sr, 
+				name,
+				muni1,
+				muni2,
+				muni3,
+				cast(fsegment as numeric) as sf,
+				cast(tsegment as numeric) as st
+			from "{package_name}" lsc
+			),
+		tblB AS(
+			SELECT
+				"ST_RT_NO" as srno ,
+				CAST("CTY_CODE" AS numeric) as co_no,
+				CAST("SEG_BGN" AS numeric) as seg_no,
+				geometry 
+			FROM penndot_rms
+			WHERE "CTY_CODE" = '{code}'
+			),
+		tblC AS(
+			SELECT 
+				a.*,
+				b.seg_no,
+				b.geometry
+			FROM tblB b
+			LEFT OUTER JOIN tblA a
+			ON a.sr = b.srno
+			),
+		tblD AS(
+			SELECT *
+			FROM tblC 
+			WHERE seg_no >= sf
+			AND seg_no <= st
+			order by project_num
+		),
+		tblE AS( 
+		select 
+			ms."GISID",	
+			d.project_num,
+			d.sr,
+			d.name,
+			d.muni1,
+			d.muni2,
+			d.muni3,
+			d.geometry
+		from tblD d
+		left join mapped_segments ms
+		on d.geometry = ms.geometry
+		)
+		select
+			project_num,
+			sr,
+			name,
+			COUNT(*)
+		from tblE
+		where "GISID" is null 
+		group by project_num, sr, name
+		""",
+        con=ENGINE,
+        geom_col="geometry",
+    )
+
+    return results
+
+
+def compile_status(df_status, df_non):
+    test
+    return s
+
+
+def map_with_status(df_status, df_geom):
+    test
+    return x
+
+
 def write_results(gdf, package_name):
     package = package_name.split("Summary ", 1)[1]
-    # gdf.to_postgis(fr"{package}_mappedreport", con=ENGINE, if_exists='replace')
-    # print("To database: Complete")
+    # output report CSV
     gdf.to_file(fr"{ev.DATA_ROOT}/shapefiles/{package}_mappedreport.shp")
     print("To shapefile: Complete")
     gdf.to_file(

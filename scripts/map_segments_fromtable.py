@@ -91,10 +91,10 @@ results = gpd.GeoDataFrame.from_postgis(
 # output spatial file (postgis, shp, and geojson)
 results.to_postgis("mapped_segments", con=ENGINE, if_exists="replace")
 print("To database: Complete")
-results.to_file(fr"{ev.DATA_ROOT}/shapefiles/mapped_segments.shp")
+results.to_file(fr"{ev.DATA_ROOT}/mapped_segments_shapefile/mapped_segments.shp")
 print("To shapefile: Complete")
 results.to_file(
-    fr"{ev.DATA_ROOT}/geojson/mapped_segments_geojson/mapped_segments.geojson",
+    fr"{ev.DATA_ROOT}/mapped_segments_geojson/mapped_segments.geojson",
     driver="GeoJSON",
 )
 print("To GeoJSON: Complete")

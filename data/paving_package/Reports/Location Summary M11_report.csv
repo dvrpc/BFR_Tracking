@@ -1,28 +1,28 @@
 project,GISID,CALENDAR_YEAR,stateroute,name,miles,muni1,muni2,muni3,ReportStatus
-1.0,,,0023,Valley Forge Rd,6.93,West Conshohocken, Bridgeport,,Not Evaluated
-1.0,2268.0,2022.0,0023,Valley Forge Rd,0.34,West Conshohocken, Bridgeport,,Repeated
-2.0,,,0073,Big Rd,5.95,Upper Fredrick, New Hanover, Douglass,Not Evaluated
-3.0,2331.0,2021.0,0202,Dekalb St.,1.35,Norristown, Bridgeport, W. Norriton,Not Repeated
-4.0,2271.0,2022.0,1008,Fretz Rd,1.85,Lower Salford,,,Not Repeated
-5.0,2120.0,2021.0,1015,Kinsey Rd,2.69,Towamencin, L. Salford,,Repeated
-5.0,2134.0,2022.0,1015,Kinsey Rd,2.69,Towamencin, L. Salford,,Repeated
-6.0,2272.0,2022.0,1023,Whites Mill Rd,2.13,Salford, Marlborough,,Not Repeated
-7.0,2338.0,2022.0,1027,Little Rd,3.56,U. Fredrick, L. Fredrick,,Not Repeated
-8.0,2273.0,2022.0,1036,Finland Rd,1.91,U. Hanover, Marlborough,,Not Repeated
-9.0,2275.0,2022.0,1048,Congo Rd,0.64,U. Hanover,,,Not Repeated
-10.0,2277.0,2022.0,2027,Mount Carmel Ave,1.22,Cheltenham, Abington,,Not Repeated
-11.0,2278.0,2022.0,2028,Camp Hill Rd,1.44,Whitemarsh, Springfield,,Not Repeated
-12.0,2279.0,2022.0,2029,Old Welsh Rd,1.59,Abington,,,Not Repeated
-13.0,2281.0,2022.0,2031,Knapp Rd,0.37,Montgomery,,,Repeated
-13.0,2280.0,2022.0,2031,Knapp Rd,0.37,Montgomery,,,Repeated
-14.0,2091.0,2022.0,2037,Pennsylvania Ave,0.52,Whitemarsh,,,Repeated
-14.0,2282.0,2022.0,2037,Pennsylvania Ave,0.52 0.52,Whitemarsh,,,Repeated
-15.0,2092.0,2022.0,2060,New Second St.,1.78,Cheltenham,,,Not Repeated
-16.0,,,3016,Matsonford Rd,0.56,W. Conshohocken, Conshohocken, L. Merion,Not Evaluated
-16.0,,,3016,Matsonford Rd,2.76 0.56,W. Conshohocken, Conshohocken, L. Merion,Not Evaluated
-17.0,2081.0,2021.0,3027,Crooked Ln,1.98,Bridgeport, U. Merion,,Not Repeated
-18.0,2052.0,2022.0,4008,Yerkes Rd,1.16,U. Providence, L. Providence,,Not Repeated
-19.0,2055.0,2022.0,4017,Linfield Trappe,2.18,Limerick,,,Not Repeated
-20.0,2346.0,2024.0,4030,New Hanover Sq,0.46,L. Pottsgrove,,,Not Repeated
-21.0,2285.0,2022.0,4036,Armand Hammer Bl.,0.69,Pottstown, L. Pottsgrove,,Not Repeated
-22.0,2286.0,2022.0,4048,Lewis Rd,5.27,Trappe, Royersford, U. Providence,Not Repeated
+1,,,23,Valley Forge Rd,6.93,West Conshohocken, Bridgeport,,Not Evaluated
+1,2268,2022,23,Valley Forge Rd,0.34,West Conshohocken, Bridgeport,,Repeated
+2,,,73,Big Rd,5.95,Upper Fredrick, New Hanover, Douglass,Not Evaluated
+3,2331,2021,202,Dekalb St.,1.35,Norristown, Bridgeport, W. Norriton,Not Repeated
+4,2271,2022,1008,Fretz Rd,1.85,Lower Salford,,,Not Repeated
+5,2120,2021,1015,Kinsey Rd,2.69,Towamencin, L. Salford,,Repeated
+5,2134,2022,1015,Kinsey Rd,2.69,Towamencin, L. Salford,,Repeated
+6,2272,2022,1023,Whites Mill Rd,2.13,Salford, Marlborough,,Not Repeated
+7,2338,2022,1027,Little Rd,3.56,U. Fredrick, L. Fredrick,,Not Repeated
+8,2273,2022,1036,Finland Rd,1.91,U. Hanover, Marlborough,,Not Repeated
+9,2275,2022,1048,Congo Rd,0.64,U. Hanover,,,Not Repeated
+10,2277,2022,2027,Mount Carmel Ave,1.22,Cheltenham, Abington,,Not Repeated
+11,2278,2022,2028,Camp Hill Rd,1.44,Whitemarsh, Springfield,,Not Repeated
+12,2279,2022,2029,Old Welsh Rd,1.59,Abington,,,Not Repeated
+13,2281,2022,2031,Knapp Rd,0.37,Montgomery,,,Repeated
+13,2280,2022,2031,Knapp Rd,0.37,Montgomery,,,Repeated
+14,2091,2022,2037,Pennsylvania Ave,0.52,Whitemarsh,,,Repeated
+14,2282,2022,2037,Pennsylvania Ave,0.52 0.52,Whitemarsh,,,Repeated
+15,2092,2022,2060,New Second St.,1.78,Cheltenham,,,Not Repeated
+16,,,3016,Matsonford Rd,0.56,W. Conshohocken, Conshohocken, L. Merion,Not Evaluated
+16,,,3016,Matsonford Rd,2.76 0.56,W. Conshohocken, Conshohocken, L. Merion,Not Evaluated
+17,2081,2021,3027,Crooked Ln,1.98,Bridgeport, U. Merion,,Not Repeated
+18,2052,2022,4008,Yerkes Rd,1.16,U. Providence, L. Providence,,Not Repeated
+19,2055,2022,4017,Linfield Trappe,2.18,Limerick,,,Not Repeated
+20,2346,2024,4030,New Hanover Sq,0.46,L. Pottsgrove,,,Not Repeated
+21,2285,2022,4036,Armand Hammer Bl.,0.69,Pottstown, L. Pottsgrove,,Not Repeated
+22,2286,2022,4048,Lewis Rd,5.27,Trappe, Royersford, U. Providence,Not Repeated
