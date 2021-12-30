@@ -5,18 +5,16 @@ make_folium_map.py
 This script makes a HTML map using folium
 and the geojson data stored within ./data/geojson
 
-Note: update the lambda function if you want each
-distinct layer to have its own color!
-
-TO DO
-- create pop-up
 """
 
+from urllib import parse
 import folium
 from pathlib import Path
 import json
+from folium.map import Popup
 import geopandas as gpd
 import env_vars as ev
+from map_packages import lookup_county_code
 
 
 # ensure geojson files use epsg=4326
@@ -33,8 +31,22 @@ def reproject(filelocation):
         gdf.to_file(geojsonfilepath, driver="GeoJSON")
 
 
-# seg_gdf = gpd.read_file(fr"{ev.DATA_ROOT}/mapped_segments_geojson/mapped_segments.geojson")
-# def style_function_years(feature):
+county_lookup = {
+    "B": "Bucks",
+    "C": "Chester",
+    "D": "Delaware",
+    "M": "Montgomery",
+    "P": "Philadelpiha",
+}
+
+
+def parse_name(package_name):
+    string = package_name
+    return string[0:3]
+
+
+def lookup_county_code(letter):
+    return county_lookup[letter[0:1]]
 
 
 def main():
@@ -61,26 +73,32 @@ def main():
             json.load(open(geojsonfilepath)),
             name="5-year Plan",
             style_function=lambda x: {
-                "color": "lightblue"
-                if x["properties"]["CALENDAR_YEAR"] == 2022
-                else "blue"
-                if x["properties"]["CALENDAR_YEAR"] == 2023
-                else "darkblue"
-                if x["properties"]["CALENDAR_YEAR"] == 2024
-                else "gray",
+                "color": "gray",
+                # if x["properties"]["CALENDAR_YEAR"] == 2022
+                # else "blue"
+                # if x["properties"]["CALENDAR_YEAR"] == 2023
+                # else "darkblue"
+                # if x["properties"]["CALENDAR_YEAR"] == 2024
+                # else "gray",
                 "weight": "1",
-                "popup": ["CALENDAR_YEAR"],
             },
+            popup=folium.GeoJsonPopup(
+                fields=["sr", "CALENDAR_YEAR"],
+                aliases=["State Route: ", "Planned Year: "],
+            ),
             zoom_on_click=True,
         ).add_to(m)
 
     # add package geojson files to the map
     for geojsonfilepath in data_dir.rglob("*.geojson"):
         file_name = geojsonfilepath.stem
+        code = parse_name(file_name)
+        County = lookup_county_code(code)
+        layername = (fr"{County}: {code}",)
         print("Adding", file_name)
         folium.GeoJson(
             json.load(open(geojsonfilepath)),
-            name=file_name,
+            name=layername,
             style_function=lambda x: {
                 "color": "green"
                 if x["properties"]["ReportStatus"] == "Not Evaluated"
@@ -88,8 +106,13 @@ def main():
                 if x["properties"]["ReportStatus"] == "Repeated"
                 else "purple"
                 if x["properties"]["ReportStatus"] == "Not Repeated"
-                else "black"
+                else "black",
+                "weight": "4",
             },
+            popup=folium.GeoJsonPopup(
+                fields=["sr", "name", "ReportStatus"],
+                aliases=["State Route: ", "Local Road Name: ", "Status: "],
+            ),
             zoom_on_click=True,
         ).add_to(m)
 
