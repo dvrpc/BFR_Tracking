@@ -1,43 +1,49 @@
-###
-# To Do:
-# add road name to shapefile output for ease of use 
+"""
+map_segments_fromtable.py
+------------------
 
-import psycopg2 as psql
-#import pandas as pd
+This script maps the entire oracle database table 
+using the PennDOT RMS later from PennDOT's GIS portal.
+Once generated, this does not need to be run for 
+every package comparison. However, it should be 
+updated regularly.
+
+"""
+
+
 import geopandas as gpd
-#import os
-from shapely import geometry, wkt
-from sqlalchemy import create_engine
-from geoalchemy2 import Geometry, WKTElement
+from geoalchemy2 import WKTElement
+import env_vars as ev
+from env_vars import ENGINE
 
+# import PennDOT's rms layer from GIS portal - RMSADMIN (Administrative Classifications of Roadway)
+gdf = gpd.read_file(
+    "https://opendata.arcgis.com/datasets/a934887d51e647d295806cc2d9c02097_0.geojson"
+)
 
-#import PennDOT's rms layer from GIS portal - RMSADMIN (Administrative Classifications of Roadway)
-gdf = gpd.read_file('https://opendata.arcgis.com/datasets/a934887d51e647d295806cc2d9c02097_0.geojson')
-
-#remove null geometries
+# remove null geometries
 gdf = gdf[gdf.geometry.notnull()]
-#remove records outside of district 6
-gdf = gdf.loc[gdf['DISTRICT_NO'] == '06']
+# remove records outside of district 6
+gdf = gdf.loc[gdf["DISTRICT_NO"] == "06"]
 
-#transform projection from 4326 to 26918
+# transform projection from 4326 to 26918
 gdf = gdf.to_crs(epsg=26918)
 
-#create geom column for postgis import
-gdf['geom'] = gdf['geometry'].apply(lambda x: WKTElement(x.wkt, srid=26918))
+# create geom column for postgis import
+gdf["geom"] = gdf["geometry"].apply(lambda x: WKTElement(x.wkt, srid=26918))
 
-#write geodataframe to postgis
-db_connection_url = "postgresql://postgres:root@localhost:5432/bfr_tracking"
-engine = create_engine(db_connection_url)
-gdf.to_postgis("penndot_rms", con=engine, if_exists='replace')
+# write geodataframe to postgis
+gdf.to_postgis("penndot_rms", con=ENGINE, if_exists="replace")
 
-#join to bfr segment table
-results = gpd.GeoDataFrame.from_postgis("""
+# join to bfr segment table
+results = gpd.GeoDataFrame.from_postgis(
+    """
 	WITH tblA AS(
 	SELECT 
 		"GISID",
         "CALENDAR_YEAR" ,
 		to_char(CAST("STATE_ROUTE" AS numeric), 'fm0000') AS sr,
-		"LOC_ROAD_NAME_RMS" 
+		"LOC_ROAD_NAME_RMS",
 		"INTERSECTION_FROM" ,
 		CAST("SEGMENT_FROM" AS numeric) AS sf,
 		"OFFSET_FROM" ,
@@ -77,10 +83,15 @@ results = gpd.GeoDataFrame.from_postgis("""
 	WHERE seg_no >= sf
 	AND seg_no <= st
 	AND "CALENDAR_YEAR" IS NOT NULL;
-""", con= engine, geom_col= "geometry")
+""",
+    con=ENGINE,
+    geom_col="geometry",
+)
 
-#output spatial file (postgis and shp)
-results.to_postgis("mapped_segments", con=engine, if_exists='replace')
+# output spatial file (postgis, shp, and geojson)
+results.to_postgis("mapped_segments", con=ENGINE, if_exists="replace")
 print("To database: Complete")
-results.to_file("D:/dvrpc_shared/BFR_Tracking/mapped_segments.shp")
+results.to_file(fr"{ev.DATA_ROOT}/shapefiles/mapped_segments.shp")
 print("To shapefile: Complete")
+results.to_file(fr"{ev.DATA_ROOT}/geojson/mapped_segments.geojson", driver="GeoJSON")
+print("To GeoJSON: Complete")

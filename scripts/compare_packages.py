@@ -11,7 +11,6 @@ A copy of the output table is also included in the database.
 
 from __future__ import annotations
 import pandas as pd
-from sqlalchemy import create_engine
 import numpy as np
 from pathlib import Path
 import env_vars as ev

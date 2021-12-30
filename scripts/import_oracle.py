@@ -13,7 +13,6 @@ import cx_Oracle
 import csv
 from datetime import date
 import pandas as pd
-from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 import env_vars as ev
 from env_vars import ENGINE

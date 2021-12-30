@@ -10,7 +10,6 @@ Report status and package number fields are added.
 
 from __future__ import annotations
 import geopandas as gpd
-from sqlalchemy import create_engine
 import pandas as pd
 import numpy as np
 from pathlib import Path
