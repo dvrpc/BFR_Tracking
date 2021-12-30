@@ -1,0 +1,20 @@
+project,GISID,CALENDAR_YEAR,stateroute,name,miles,muni1,muni2,muni3,ReportStatus
+1.0,2291.0,2021.0,0232,2nd Street Pk,3.09,Wrightstown, Northampton,,Not Repeated
+2.0,2292.0,2021.0,0313,Dublin Pk,6.40,Richland, Hilltown, E. Rockhill,Not Repeated
+3.0,,,0313,Swamp Rd,3.72,Dublin, New Britain, Hilltown,Not Evaluated
+4.0,2263.0,2021.0,0313,Swamp Rd,0.28,New Britain, Doylestown, Plumstead,Repeated
+4.0,2257.0,2021.0,0313,Swamp Rd,2.09,New Britain, Doylestown, Plumstead,Repeated
+5.0,2293.0,2021.0,0332,Almhouse Rd,3.58,Northampton,,,Not Repeated
+6.0,2295.0,2021.0,0332,Yardley Newtown Rd,2.48,Yardley, L. Makefield,,Not Repeated
+7.0,2244.0,2021.0,2037,Old Lincoln Hwy,2.02,Bensalem,,,Not Repeated
+8.0,,,2045,Old Lincoln Hwy,1.63 0.02,Middletown,,,Not Evaluated
+8.0,,,2045,Old Lincoln Hwy,0.02,Middletown,,,Not Evaluated
+9.0,,,2050,Lincoln Hwy,0.56,Falls,,,Not Evaluated
+9.0,,,2050,Lincoln Hwy,0.58,Falls,,,Not Evaluated
+10.0,2266.0,2021.0,2051,Levittown Pkwy,3.04,Tullytown, Falls, Bristol,Repeated
+10.0,2265.0,2021.0,2051,Levittown Pkwy,3.05 3.04,Tullytown, Falls, Bristol,Repeated
+11.0,2231.0,2021.0,4077,Apple Rd,2.68,Richland, Haycock,,Not Repeated
+12.0,2234.0,2021.0,4083,Limeport Rd,0.3,Milford,,,Not Repeated
+13.0,2125.0,2021.0,4093,Creamery Rd,0.44,Trumbauersville B. Milford,,,Repeated
+14.0,,,4202,Butler Ave,4.80 0.09,New Britain, Chalfont,,Not Evaluated
+14.0,,,4202,Butler Ave,0.09,New Britain, Chalfont,,Not Evaluated

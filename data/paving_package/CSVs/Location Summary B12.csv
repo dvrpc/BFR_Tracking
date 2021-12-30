@@ -1,0 +1,20 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 0232 2nd Street Pk,Bustleton Pk / SR 2065,Swamp Rd / SR 2036,"Mill & 1 1/2"" Overlay",3.09,"Wrightstown, Northampton","9,494",0232,2nd Street Pk,Wrightstown, Northampton,,0094,0000,0150,1676
+2.0,SR 0313 Dublin Pk,Morgan Creek Bridge,Bedminster Rd / Souderton Rd / SR 0113,"Mill & 1 1/2"" Overlay",6.40,"Richland, Hilltown, E. Rockhill","15,888",0313,Dublin Pk,Richland, Hilltown, E. Rockhill,0082,0000,0212,1500
+3.0,SR 0313 Swamp Rd,Bedminster Rd / Souderton Rd / SR 0113,Curly Hill Rd / SR 1008,"Mill & 1 1/2"" Overlay",3.72,"Dublin, New Britain, Hilltown","18,283",0313,Swamp Rd,Dublin, New Britain, Hilltown,0222,0000,0282,2345
+4.0,SR 0313 Swamp Rd,Curly Hill Rd / SR 1008,Doylestown / Plumstead Twp. Line,"Mill & 1 1/2"" Overlay",2.09,"New Britain, Doylestown, Plumstead","18,901",0313,Swamp Rd,New Britain, Doylestown, Plumstead,0292,0000,0342,0948
+4.0,SR 0313 Swamp Rd,Curly Hill Rd / SR 1008,Doylestown / Plumstead Twp. Line,"Mill & 1 1/2"" Overlay",0.28,"New Britain, Doylestown, Plumstead","18,901",0313,Swamp Rd,New Britain, Doylestown, Plumstead,0333,0000,0343,0940
+5.0,SR 0332 Almhouse Rd,Spencer Rd,Holland Rd / SR 2067,"Mill & 1 1/2"" Overlay",3.58,Northampton,"16,924",0332,Almhouse Rd,Northampton,,,0090,0000,0150,2081
+6.0,SR 0332 Yardley Newtown Rd,Ramp I-295 EB to RT 332,Delaware Ave / SR 0032,"Mill & 1 1/2"" Overlay",2.48,"Yardley, L. Makefield","11,403",0332,Yardley Newtown Rd,Yardley, L. Makefield,,0290,0000,0330,1721
+7.0,SR 2037 Old Lincoln Hwy,Lincoln Hwy / SR 0001,Bristol Rd / SR 2025,"Mill & 1 1/2"" Overlay",2.02,Bensalem,"15,562",2037,Old Lincoln Hwy,Bensalem,,,0010,0000,0040,2629
+8.0,SR 2045 Old Lincoln Hwy,US 1,Maple Ave / SR 0213,"Mill & 1 1/2"" Overlay",0.02,Middletown,"6,799",2045,Old Lincoln Hwy,Middletown,,,0005,0000,0005,0100
+8.0,SR 2045 Old Lincoln Hwy,0005/0000 US 1,0005/0100 Maple Ave / SR 0213,"Mill & 1 1/2"" Overlay",1.63 0.02,Middletown,"6,799",2045,Old Lincoln Hwy,Middletown,,,0004,0000,0040,1298
+9.0,SR 2050 Lincoln Hwy,Tyburn Rd / SR 2020,Woolston Dr / SR 2022,"Mill & 1 1/2"" Overlay",0.58,Falls,"8,369",2050,Lincoln Hwy,Falls,,,0010,0000,0020,1573
+9.0,SR 2050 Lincoln Hwy,Tyburn Rd / SR 2020,Woolston Dr / SR 2022,"Mill & 1 1/2"" Overlay",0.56,Falls,"8,369",2050,Lincoln Hwy,Falls,,,0011,0000,0021,1540
+10.0,SR 2051 Levittown Pkwy,Bristol Pk / SR 0013,Hood Blvd / SR 2053,"Mill & 1 1/2"" Overlay",3.04,"Tullytown, Falls, Bristol","9,882",2051,Levittown Pkwy,Tullytown, Falls, Bristol,0011,0000,0061,3362
+10.0,SR 2051 Levittown Pkwy,0011/0000 Bristol Pk / SR 0013,0061/3362 Hood Blvd / SR 2053,"Mill & 1 1/2"" Overlay",3.05 3.04,"Tullytown, Falls, Bristol","9,882",2051,Levittown Pkwy,Tullytown, Falls, Bristol,0010,0000,0060,3334
+11.0,SR 4077 Apple Rd,Union Ave / SR 4047,Old Bethlehem Rd / SR 4101,"Mill & 1 1/2"" Overlay",2.68,"Richland, Haycock",195,4077,Apple Rd,Richland, Haycock,,0010,0000,0050,2762
+12.0,SR 4083 Limeport Rd,Allentown Rd / SR 4027,Lehigh Co. Line,"Mill & 1 1/2"" Overlay",0.3,Milford,256,4083,Limeport Rd,Milford,,,0010,0000,0010,1587
+13.0,SR 4093 Creamery Rd,Trumbauersville Rd / SR 4051,Allentown Rd / SR 4027,"Mill & 1 1/2"" Overlay",0.44,Trumbauersville B. Milford,638,4093,Creamery Rd,Trumbauersville B. Milford,,,0010,0000,0010,2306
+14.0,SR 4202 Butler Ave,0015/0000 County Line Rd / SR 2038,0015/0461 440' N. of New Britain Rd,"Mill & 1 1/2"" Overlay",4.80 0.09,"New Britain, Chalfont","15,663",4202,Butler Ave,New Britain, Chalfont,,0010,0000,0110,3407
+14.0,SR 4202 Butler Ave,County Line Rd / SR 2038,440' N. of New Britain Rd,"Mill & 1 1/2"" Overlay",0.09,"New Britain, Chalfont","15,663",4202,Butler Ave,New Britain, Chalfont,,0015,0000,0015,0461

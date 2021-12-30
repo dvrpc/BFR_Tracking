@@ -11,6 +11,6 @@ TO DO
 - look for report
 - look for map outputs (geojson and shp)
 - read them in
-- remove or edit rows
+- remove or edit rows (have space for manual input?)
 - re-write outputs
 """

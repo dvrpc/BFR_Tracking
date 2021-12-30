@@ -17,7 +17,7 @@ import env_vars as ev
 from env_vars import ENGINE
 
 
-county_lookup = {"B": 9, "C": 15, "D": 23, "M": 46, "P": 51}
+county_lookup = {"B": "09", "C": "15", "D": "23", "M": "46", "P": "51"}
 
 
 def parse_county_identifier(package_name):
