@@ -101,16 +101,16 @@ def main():
             name=layername,
             style_function=lambda x: {
                 "color": "green"
-                if x["properties"]["ReportStatus"] == "Not Evaluated"
+                if x["properties"]["status"] == "Not Evaluated"
                 else "orange"
-                if x["properties"]["ReportStatus"] == "Repeated"
+                if x["properties"]["status"] == "Fully Evaluated"
                 else "purple"
-                if x["properties"]["ReportStatus"] == "Not Repeated"
+                if x["properties"]["status"] == "Partially Evaluated"
                 else "black",
                 "weight": "4",
             },
             popup=folium.GeoJsonPopup(
-                fields=["sr", "name", "ReportStatus"],
+                fields=["sr", "name", "status"],
                 aliases=["State Route: ", "Local Road Name: ", "Status: "],
             ),
             zoom_on_click=True,
