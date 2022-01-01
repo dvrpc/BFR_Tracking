@@ -9,12 +9,10 @@ for any PDF rows that contain two segments instead of one.
 """
 
 from __future__ import annotations
-from os import replace
 from pathlib import Path
 import tabula
 import pandas as pd
 from PyPDF2 import PdfFileReader
-from sqlalchemy import create_engine
 import env_vars as ev
 from env_vars import ENGINE
 
