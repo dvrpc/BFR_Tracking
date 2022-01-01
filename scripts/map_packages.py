@@ -40,7 +40,7 @@ def map_package(package_name):
 	with tblA AS(
 		select 
 			project_num,
-			sr, 
+			CAST(sr AS text) as sr, 
 			name,
 			muni1,
 			muni2,
@@ -51,7 +51,7 @@ def map_package(package_name):
 		),
 	tblB AS(
 		SELECT
-			"ST_RT_NO" as srno ,
+			"ST_RT_NO" as srno,
 			CAST("CTY_CODE" AS numeric) as co_no,
 			CAST("SEG_BGN" AS numeric) as seg_no,
 			geometry 
@@ -104,7 +104,7 @@ def summarize_evaluted_segments(package_name):
 		with tblA AS(
 			select 
 				project_num,
-				sr, 
+				CAST(sr AS text) as sr, 
 				name,
 				muni1,
 				muni2,
@@ -115,7 +115,7 @@ def summarize_evaluted_segments(package_name):
 			),
 		tblB AS(
 			SELECT
-				"ST_RT_NO" as srno ,
+				"ST_RT_NO" as srno,
 				CAST("CTY_CODE" AS numeric) as co_no,
 				CAST("SEG_BGN" AS numeric) as seg_no,
 				geometry 
@@ -174,7 +174,7 @@ def flag_not_evaluated_segments(package_name):
 		with tblA AS(
 			select 
 				project_num,
-				sr, 
+				CAST(sr AS text) as sr, 
 				name,
 				muni1,
 				muni2,
@@ -185,7 +185,7 @@ def flag_not_evaluated_segments(package_name):
 			),
 		tblB AS(
 			SELECT
-				"ST_RT_NO" as srno ,
+				"ST_RT_NO" as srno,
 				CAST("CTY_CODE" AS numeric) as co_no,
 				CAST("SEG_BGN" AS numeric) as seg_no,
 				geometry 

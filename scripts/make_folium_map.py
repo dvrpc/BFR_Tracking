@@ -113,7 +113,7 @@ def main():
                 fields=["sr", "name", "status"],
                 aliases=["State Route: ", "Local Road Name: ", "Status: "],
             ),
-            zoom_on_click=True,
+            zoom_on_click=False,
         ).add_to(m)
 
     # add layer toggle box and save to HTML file

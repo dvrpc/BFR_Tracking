@@ -1,18 +1,14 @@
 project_num,sr,name,gisids,status
-1.0,0001,Kennett Oxford BP (NB),"165, 2372",Fully Evaluated
-2.0,0272,Chrome Rd / Christine Rd East,2114,Fully Evaluated
-3.0,0322,West Chester BP,"175, 176, 2373, 2374",Fully Evaluated
-4.0,0724,Schuylkill Rd,"2364, 2365",Fully Evaluated
-5.0,1010,Swedesford Rd,2360,Fully Evaluated
-6.0,1036,Pothouse Rd,2119,Fully Evaluated
-7.0,2007,Westtown Rd,"183, 2348",Fully Evaluated
-8.0,2019,Newtown Rd,2349,Fully Evaluated
-9.0,3002,Chrome Rd,2102,Fully Evaluated
-10.0,3004,State Rd,"184, 2376",Fully Evaluated
-11.0,3019,Spring Mill Rd,"186, 2201",Fully Evaluated
-12.0,3021,Parkersville Rd,2350,Fully Evaluated
-13.0,3038,Burnt Mill Rd,2104,Fully Evaluated
-14.0,3056,Doe Run Station Rd,191,Fully Evaluated
-15.0,3057,Bradford Ave,2105,Fully Evaluated
-16.0,3061,Quarry Rd,"2204, 2377",Fully Evaluated
-17.0,4017,Rock Raymond Rd,2366,Fully Evaluated
+5,1010,Swedesford Rd,2360,Fully Evaluated
+6,1036,Pothouse Rd,2119,Fully Evaluated
+7,2007,Westtown Rd,"183, 2348",Fully Evaluated
+8,2019,Newtown Rd,2349,Fully Evaluated
+9,3002,Chrome Rd,2102,Fully Evaluated
+10,3004,State Rd,"184, 2376",Fully Evaluated
+11,3019,Spring Mill Rd,"186, 2201",Fully Evaluated
+12,3021,Parkersville Rd,2350,Fully Evaluated
+13,3038,Burnt Mill Rd,2104,Fully Evaluated
+14,3056,Doe Run Station Rd,191,Fully Evaluated
+15,3057,Bradford Ave,2105,Fully Evaluated
+16,3061,Quarry Rd,"2204, 2377",Fully Evaluated
+17,4017,Rock Raymond Rd,2366,Fully Evaluated
