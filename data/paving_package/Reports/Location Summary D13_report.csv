@@ -1,11 +1,14 @@
 project_num,sr,name,gisids,status
-1,2009,Springfield Rd,2122,Fully Evaluated
-2,2013,Clifton Ave,2173,Fully Evaluated
-3,2016,Baltimore Pk,"2303, 2304",Fully Evaluated
-4,2031,Sellers Ave,"2176, 333",Fully Evaluated
-5,2037,Crum Creek Rd,2312,Fully Evaluated
-6,3010,Chester City,2133,Fully Evaluated
-7,3013,Chestnut St,2181,Fully Evaluated
-8,3014,Mill Rd,"2182, 334",Fully Evaluated
-9,3016,Larkin Rd,"2183, 335",Fully Evaluated
-10,4005,Darlington Road,,Not Evaluated
+1.0,1013,Springfield Rd,"2393, 2394",Fully Evaluated
+2.0,2002,2nd Street,2169,Fully Evaluated
+3.0,2009,Springfield Rd,2122,Fully Evaluated
+4.0,2013,Clifton Ave,2173,Fully Evaluated
+5.0,2016,Baltimore Pk,"2303, 2304",Fully Evaluated
+6.0,2028,Morton Ave,352,Fully Evaluated
+7.0,2031,Sellers Ave,"2176, 333",Fully Evaluated
+8.0,2037,Crum Creek Rd,2312,Fully Evaluated
+9.0,3003,Turner Rd,,Not Evaluated
+10.0,3011,Blueball Ave,359,Fully Evaluated
+11.0,3013,Chestnut St,2181,Fully Evaluated
+12.0,3014,Mill Rd,"2182, 334",Fully Evaluated
+13.0,3016,Larkin Rd,"2183, 335",Fully Evaluated

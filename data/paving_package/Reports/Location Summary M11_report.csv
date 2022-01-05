@@ -1,20 +1,23 @@
 project_num,sr,name,gisids,status
-4,1008,Fretz Rd,2271,Fully Evaluated
-5,1015,Kinsey Rd,2134,Fully Evaluated
-6,1023,Whites Mill Rd,2272,Fully Evaluated
-7,1027,Little Rd,2338,Fully Evaluated
-8,1036,Finland Rd,2273,Fully Evaluated
-9,1048,Congo Rd,2275,Fully Evaluated
-10,2027,Mount Carmel Ave,2277,Fully Evaluated
-11,2028,Camp Hill Rd,2278,Fully Evaluated
-12,2029,Old Welsh Rd,2279,Fully Evaluated
-13,2031,Knapp Rd,"2280, 2281",Fully Evaluated
-14,2037,Pennsylvania Ave,"2091, 2282",Fully Evaluated
-15,2060,New Second St.,2092,Fully Evaluated
-16,3016,Matsonford Rd,2093,Partially Evaluated
-17,3027,Crooked Ln,2081,Fully Evaluated
-18,4008,Yerkes Rd,2052,Partially Evaluated
-19,4017,Linfield Trappe,2055,Fully Evaluated
-20,4030,New Hanover Sq,2346,Fully Evaluated
-21,4036,Armand Hammer Bl.,2285,Fully Evaluated
-22,4048,Lewis Rd,2286,Fully Evaluated
+1.0,0023,Valley Forge Rd,"2090, 2225, 2268",Fully Evaluated
+2.0,0073,Big Rd,2269,Fully Evaluated
+3.0,0202,Dekalb St.,2331,Fully Evaluated
+4.0,1008,Fretz Rd,2271,Fully Evaluated
+5.0,1015,Kinsey Rd,2134,Fully Evaluated
+6.0,1023,Whites Mill Rd,2272,Fully Evaluated
+7.0,1027,Little Rd,2338,Fully Evaluated
+8.0,1036,Finland Rd,2273,Fully Evaluated
+9.0,1048,Congo Rd,2275,Fully Evaluated
+10.0,2027,Mount Carmel Ave,2277,Fully Evaluated
+11.0,2028,Camp Hill Rd,2278,Fully Evaluated
+12.0,2029,Old Welsh Rd,2279,Fully Evaluated
+13.0,2031,Knapp Rd,"2280, 2281",Fully Evaluated
+14.0,2037,Pennsylvania Ave,"2091, 2282",Fully Evaluated
+15.0,2060,New Second St.,2092,Fully Evaluated
+16.0,3016,Matsonford Rd,2093,Partially Evaluated
+17.0,3027,Crooked Ln,2081,Fully Evaluated
+18.0,4008,Yerkes Rd,2052,Fully Evaluated
+19.0,4017,Linfield Trappe,2055,Fully Evaluated
+20.0,4030,New Hanover Sq,2346,Fully Evaluated
+21.0,4036,Armand Hammer Bl.,2285,Fully Evaluated
+22.0,4048,Lewis Rd,2286,Fully Evaluated

@@ -16,9 +16,9 @@ from geoalchemy2 import WKTElement
 import env_vars as ev
 from env_vars import ENGINE
 
-# import PennDOT's rms layer from GIS portal - RMSADMIN (Administrative Classifications of Roadway)
+# import PennDOT's rms layer from GIS portal - RMSSEG (State Roads)
 gdf = gpd.read_file(
-    "https://opendata.arcgis.com/datasets/a934887d51e647d295806cc2d9c02097_0.geojson"
+    "https://opendata.arcgis.com/datasets/d9a2a5df74cf4726980e5e276d51fe8d_0.geojson"
 )
 
 # remove null geometries

@@ -1,4 +1,10 @@
 project_num,sr,name,gisids,status
+1.0,0232,2nd Street Pk,2291,Fully Evaluated
+2.0,0313,Dublin Pk,2292,Fully Evaluated
+3.0,0313,Swamp Rd,2170,Partially Evaluated
+4.0,0313,Swamp Rd,"2257, 2263",Fully Evaluated
+5.0,0332,Almhouse Rd,2293,Fully Evaluated
+6.0,0332,Yardley Newtown Rd,2295,Fully Evaluated
 7.0,2037,Old Lincoln Hwy,2244,Fully Evaluated
 8.0,2045,Old Lincoln Hwy,,Not Evaluated
 9.0,2050,Lincoln Hwy,,Not Evaluated
