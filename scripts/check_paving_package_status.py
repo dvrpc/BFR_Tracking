@@ -13,8 +13,8 @@ from scrape_packages import main as scrape
 from map_packages import main as mapper
 from make_folium_map import main as webmapper
 
-# print("Importing from Oracle")
-# importer()
+print("Importing from Oracle")
+importer()
 print("Scraping Paving Packages")
 scrape()
 print("Comparing and Mapping Paving Package Segments")

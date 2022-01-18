@@ -20,7 +20,7 @@ import env_vars as ev
 from env_vars import ENGINE
 
 
-county_lookup = {"B": "09", "C": "15", "D": "23", "M": "46", "P": "51"}
+county_lookup = {"B": "09", "C": "15", "D": "23", "M": "46", "P": "67"}
 
 
 def parse_county_identifier(package_name):
@@ -237,6 +237,15 @@ def flag_not_evaluated_segments(package_name):
     return results
 
 
+def map_and_write_phila(package_name):
+    package = package_name.split("Summary ", 1)[1]
+    gdf = map_package(package_name)
+    gdf.to_file(
+        fr"{ev.DATA_ROOT}/geojson/{package}_mappedreport.geojson", driver="GeoJSON"
+    )
+    print("To GeoJSON: Complete")
+
+
 def compile_status_report(package_name):
     evaluated = pd.DataFrame(summarize_evaluted_segments(package_name))
     has_null = pd.DataFrame(flag_not_evaluated_segments(package_name))
@@ -292,6 +301,8 @@ def main():
         report_output = compile_status_report(filepath.stem)
         map_output = map_with_status(filepath.stem, report_output)
         write_results(filepath.stem, map_output, report_output)
+
+    map_and_write_phila("Location Summary P12")
 
 
 if __name__ == "__main__":
