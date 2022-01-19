@@ -1,27 +1,28 @@
 project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
-1.0,SR 0023 Valley Forge Rd,Geerdes Blvd.,Matsonford Rd / SR 3016,"Mill & 1 1/2"" Overlay",6.93,"West Conshohocken, Bridgeport","11,097",0023,Valley Forge Rd,West Conshohocken, Bridgeport,,0120,0000,0280,0869
-1.0,SR 0023 Valley Forge Rd,Geerdes Blvd.,Matsonford Rd / SR 3016,"Mill & 1 1/2"" Overlay",0.34,"West Conshohocken, Bridgeport","11,097",0023,Valley Forge Rd,West Conshohocken, Bridgeport,,0211,0000,0281,0875
-2.0,SR 0073 Big Rd,Berks Co. Line,Colonial Rd,"Mill & 1 1/2"" Overlay",5.95,"Upper Fredrick, New Hanover, Douglass","18,909",0073,Big Rd,Upper Fredrick, New Hanover, Douglass,0010,0000,0120,2534
-3.0,SR 0202 Dekalb St.,Airy St.,Johnson Hwy / SR 3017,"Mill & 1 1/2"" Overlay",1.35,"Norristown, Bridgeport, W. Norriton","8,172",0202,Dekalb St.,Norristown, Bridgeport, W. Norriton,0140,0000,0154,1614
-4.0,SR 1008 Fretz Rd,Sumneytown Pk / SR 0063,Wambold Rd / SR 1058,"Mill & 1 1/2"" Overlay",1.85,Lower Salford,"5,939",1008,Fretz Rd,Lower Salford,,,0010,0000,0040,3717
-5.0,SR 1015 Kinsey Rd,Old Fortyfoot Rd / SR 1006,Harleysville Pk / SR 0113,"Mill & 1 1/2"" Overlay",2.69,"Towamencin, L. Salford",548,1015,Kinsey Rd,Towamencin, L. Salford,,0010,0000,0050,3111
-6.0,SR 1023 Whites Mill Rd,Ridge Rd / SR 0563,Swamp Creek Rd / SR 1030,"Mill & 1 1/2"" Overlay",2.13,"Salford, Marlborough",402,1023,Whites Mill Rd,Salford, Marlborough,,0010,0000,0040,3335
-7.0,SR 1027 Little Rd,Gravel Pk / SR 0029,Little Rd / Snyder Rd,"Mill & 1 1/2"" Overlay",3.56,"U. Fredrick, L. Fredrick",996,1027,Little Rd,U. Fredrick, L. Fredrick,,0010,0000,0070,0630
-8.0,SR 1036 Finland Rd,Geryville Pk,U. Ridge Rd / SR 1032,"Mill & 1 1/2"" Overlay",1.91,"U. Hanover, Marlborough","1,812",1036,Finland Rd,U. Hanover, Marlborough,,0030,0000,0054,2500
-9.0,SR 1048 Congo Rd,Douglass Twp. Line,Kutztown Rd / SR 1033,"Mill & 1 1/2"" Overlay",0.64,U. Hanover,765,1048,Congo Rd,U. Hanover,,,0080,0000,0080,3361
-10.0,SR 2027 Mount Carmel Ave,Easton Rd,Chelsea Ave,"Mill & 1 1/2"" Overlay",1.22,"Cheltenham, Abington","5,309",2027,Mount Carmel Ave,Cheltenham, Abington,,0010,0000,0020,2613
-11.0,SR 2028 Camp Hill Rd,Skippack Pk / SR 0073,Pennsylvania Ave / SR 2027,"Mill & 1 1/2"" Overlay",1.44,"Whitemarsh, Springfield","5,308",2028,Camp Hill Rd,Whitemarsh, Springfield,,0010,0000,0020,3147
-12.0,SR 2029 Old Welsh Rd,Edgehill Rd / SR 2034 / Old Welsh Rd / SR 0063,Fitzwatertown Rd / SR 2038,"Mill & 1 1/2"" Overlay",1.59,Abington,"10,067",2029,Old Welsh Rd,Abington,,,0010,0000,0040,3050
-13.0,SR 2031 Knapp Rd,SR 0202 Pkwy,Bethleham Pk / SR 0309,"Mill & 1 1/2"" Overlay",0.37,Montgomery,"2,830",2031,Knapp Rd,Montgomery,,,0010,0000,0010,1963
-13.0,SR 2031 Knapp Rd,SR 0202 Pkwy,Bethleham Pk / SR 0309,"Mill & 1 1/2"" Overlay",0.37,Montgomery,"2,830",2031,Knapp Rd,Montgomery,,,0011,0000,0011,1940
-14.0,SR 2037 Pennsylvania Ave,0013/0000 Ramp A Rd / SR 8031,0013/2742 Ft. Washington Ave / SR 2022,"Mill & 1 1/2"" Overlay",0.52 0.52,Whitemarsh,"10,907",2037,Pennsylvania Ave,Whitemarsh,,,0012,0000,0012,2742
-14.0,SR 2037 Pennsylvania Ave,Ramp A Rd / SR 8031,Ft. Washington Ave / SR 2022,"Mill & 1 1/2"" Overlay",0.52,Whitemarsh,"10,907",2037,Pennsylvania Ave,Whitemarsh,,,0013,0000,0013,2742
-15.0,SR 2060 New Second St.,Cheltenham Ave / SR 1002,Township Line Rd / SR 0073,"Mill & 1 1/2"" Overlay",1.78,Cheltenham,"11,778",2060,New Second St.,Cheltenham,,,0010,0000,0030,3389
-16.0,SR 3016 Matsonford Rd,0051/0000 County Libe Rd / Del. Co. Line,0051/2957 Elm St / SR 3058 / SR 3013,"Mill & 1 1/2"" Overlay",2.76 0.56,"W. Conshohocken, Conshohocken, L. Merion","17,263",3016,Matsonford Rd,W. Conshohocken, Conshohocken, L. Merion,0010,0000,0050,2971
-16.0,SR 3016 Matsonford Rd,County Libe Rd / Del. Co. Line,Elm St / SR 3058 / SR 3013,"Mill & 1 1/2"" Overlay",0.56,"W. Conshohocken, Conshohocken, L. Merion","17,263",3016,Matsonford Rd,W. Conshohocken, Conshohocken, L. Merion,0051,0000,0051,2957
-17.0,SR 3027 Crooked Ln,Gulph Rd / SR 3039,Dekalb Pk / SR 0202,"Mill & 1 1/2"" Overlay",1.98,"Bridgeport, U. Merion","2,248",3027,Crooked Ln,Bridgeport, U. Merion,,0010,0000,0030,3589
-18.0,SR 4008 Yerkes Rd,Collegville Rd / SR 0029,Saffron Way,"Mill & 1 1/2"" Overlay",1.16,"U. Providence, L. Providence",994,4008,Yerkes Rd,U. Providence, L. Providence,,0010,0000,0020,3965
-19.0,SR 4017 Linfield Trappe,Lewis Rd / SR 4022,Township Line Rd / SR 4014,"Mill & 1 1/2"" Overlay",2.18,Limerick,"5,291",4017,Linfield Trappe,Limerick,,,0012,0000,0052,3059
-20.0,SR 4030 New Hanover Sq,Bliem Rd / SR 4027,New Hanover Twp. Line,"Mill & 1 1/2"" Overlay",0.46,L. Pottsgrove,429,4030,New Hanover Sq,L. Pottsgrove,,,0010,0000,0010,2441
-21.0,SR 4036 Armand Hammer Bl.,Industrial Hwy,High St / SR 4031,"Mill & 1 1/2"" Overlay",0.69,"Pottstown, L. Pottsgrove","15,487",4036,Armand Hammer Bl.,Pottstown, L. Pottsgrove,,0010,0000,0020,1966
-22.0,SR 4048 Lewis Rd,Linfield Trappe Rd / SR 4022,Main St / SR 4031,"Mill & 1 1/2"" Overlay",5.27,"Trappe, Royersford, U. Providence","11,931",4048,Lewis Rd,Trappe, Royersford, U. Providence,0010,0000,0090,1664
+1,SR 0023 Valley Forge Rd,Geerdes Blvd.,Matsonford Rd / SR 3016,"Mill & 1 1/2"" Overlay",6.93,"West Conshohocken, Bridgeport","11,097",23,Valley Forge Rd,West Conshohocken, Bridgeport,,120,0,280,869
+1,SR 0023 Valley Forge Rd,Geerdes Blvd.,Matsonford Rd / SR 3016,"Mill & 1 1/2"" Overlay",0.34,"West Conshohocken, Bridgeport","11,097",23,Valley Forge Rd,West Conshohocken, Bridgeport,,211,0,281,875
+2,SR 0073 Big Rd,Berks Co. Line,Colonial Rd,"Mill & 1 1/2"" Overlay",5.95,"Upper Fredrick, New Hanover, Douglass","18,909",73,Big Rd,Upper Fredrick, New Hanover, Douglass,10,0,120,2534
+3,SR 0202 Dekalb St.,Airy St.,Johnson Hwy / SR 3017,"Mill & 1 1/2"" Overlay",1.35,"Norristown, Bridgeport, W. Norriton","8,172",202,Dekalb St.,Norristown, Bridgeport, W. Norriton,140,0,154,1614
+4,SR 1008 Fretz Rd,Sumneytown Pk / SR 0063,Wambold Rd / SR 1058,"Mill & 1 1/2"" Overlay",1.85,Lower Salford,"5,939",1008,Fretz Rd,Lower Salford,,,10,0,40,3717
+5,SR 1015 Kinsey Rd,Old Fortyfoot Rd / SR 1006,Harleysville Pk / SR 0113,"Mill & 1 1/2"" Overlay",2.69,"Towamencin, L. Salford",548,1015,Kinsey Rd,Towamencin, L. Salford,,10,0,50,3111
+6,SR 1023 Whites Mill Rd,Ridge Rd / SR 0563,Swamp Creek Rd / SR 1030,"Mill & 1 1/2"" Overlay",2.13,"Salford, Marlborough",402,1023,Whites Mill Rd,Salford, Marlborough,,10,0,40,3335
+7,SR 1027 Little Rd,Gravel Pk / SR 0029,Little Rd / Snyder Rd,"Mill & 1 1/2"" Overlay",3.56,"U. Fredrick, L. Fredrick",996,1027,Little Rd,U. Fredrick, L. Fredrick,,10,0,70,630
+8,SR 1036 Finland Rd,Geryville Pk,U. Ridge Rd / SR 1032,"Mill & 1 1/2"" Overlay",1.91,"U. Hanover, Marlborough","1,812",1036,Finland Rd,U. Hanover, Marlborough,,30,0,54,2500
+9,SR 1048 Congo Rd,Douglass Twp. Line,Kutztown Rd / SR 1033,"Mill & 1 1/2"" Overlay",0.64,U. Hanover,765,1048,Congo Rd,U. Hanover,,,80,0,80,3361
+10,SR 2027 Mount Carmel Ave,Easton Rd,Chelsea Ave,"Mill & 1 1/2"" Overlay",1.22,"Cheltenham, Abington","5,309",2027,Mount Carmel Ave,Cheltenham, Abington,,10,0,20,2613
+11,SR 2028 Camp Hill Rd,Skippack Pk / SR 0073,Pennsylvania Ave / SR 2027,"Mill & 1 1/2"" Overlay",1.44,"Whitemarsh, Springfield","5,308",2028,Camp Hill Rd,Whitemarsh, Springfield,,10,0,20,3147
+12,SR 2029 Old Welsh Rd,Edgehill Rd / SR 2034 / Old Welsh Rd / SR 0063,Fitzwatertown Rd / SR 2038,"Mill & 1 1/2"" Overlay",1.59,Abington,"10,067",2029,Old Welsh Rd,Abington,,,10,0,40,3050
+13,SR 2031 Knapp Rd,SR 0202 Pkwy,Bethleham Pk / SR 0309,"Mill & 1 1/2"" Overlay",0.37,Montgomery,"2,830",2031,Knapp Rd,Montgomery,,,10,0,10,1963
+13,SR 2031 Knapp Rd,SR 0202 Pkwy,Bethleham Pk / SR 0309,"Mill & 1 1/2"" Overlay",0.37,Montgomery,"2,830",2031,Knapp Rd,Montgomery,,,11,0,11,1940
+14,SR 2037 Pennsylvania Ave,0013/0000 Ramp A Rd / SR 8031,0013/2742 Ft. Washington Ave / SR 2022,"Mill & 1 1/2"" Overlay",0.52 0.52,Whitemarsh,"10,907",2037,Pennsylvania Ave,Whitemarsh,,,12,0,12,2742
+14,SR 2037 Pennsylvania Ave,Ramp A Rd / SR 8031,Ft. Washington Ave / SR 2022,"Mill & 1 1/2"" Overlay",0.52,Whitemarsh,"10,907",2037,Pennsylvania Ave,Whitemarsh,,,13,0,13,2742
+15,SR 2060 New Second St.,Cheltenham Ave / SR 1002,Township Line Rd / SR 0073,"Mill & 1 1/2"" Overlay",1.78,Cheltenham,"11,778",2060,New Second St.,Cheltenham,,,10,0,30,3389
+16,SR 3016 Matsonford Rd,County Line Rd,Montgomery Ave,"Mill & 1 1/2"" Overlay",0.68,"W. Conshohocken, Conshohocken, L. Merion","17,263",3016,Matsonford Rd,Upper Merion, L. Merion,,10,0,10,3583
+16,SR 3016 Matsonford Rd,Rebel Hill Rd,Elm St / SR 3058 / SR 3013,"Mill & 1 1/2"" Overlay",1.56,"W. Conshohocken, Conshohocken, L. Merion","17,263",3016,Matsonford Rd,Upper Merion, L. Merion,,20,2668,50,2971
+16,SR 3016 Matsonford Rd,Rebel Hill Rd,Elm St / SR 3058 / SR 3013,"Mill & 1 1/2"" Overlay",0.56,"W. Conshohocken, Conshohocken, L. Merion","17,263",3016,Matsonford Rd,Upper Merion, L. Merion,,51,0,51,2957
+17,SR 3027 Crooked Ln,Gulph Rd / SR 3039,Dekalb Pk / SR 0202,"Mill & 1 1/2"" Overlay",1.98,"Bridgeport, U. Merion","2,248",3027,Crooked Ln,Bridgeport, U. Merion,,10,0,30,3589
+18,SR 4008 Yerkes Rd,Collegville Rd / SR 0029,Level Rd,"Mill & 1 1/2"" Overlay",1.26,"U. Providence, L. Providence",994,4008,Yerkes Rd,U. Providence, L. Providence,,10,0,30,518
+19,SR 4017 Linfield Trappe,Lewis Rd / SR 4022,Township Line Rd / SR 4014,"Mill & 1 1/2"" Overlay",2.18,Limerick,"5,291",4017,Linfield Trappe,Limerick,,,12,0,52,3059
+20,SR 4030 New Hanover Sq,Bliem Rd / SR 4027,New Hanover Twp. Line,"Mill & 1 1/2"" Overlay",0.46,L. Pottsgrove,429,4030,New Hanover Sq,L. Pottsgrove,,,10,0,10,2441
+21,SR 4036 Armand Hammer Bl.,Industrial Hwy,High St / SR 4031,"Mill & 1 1/2"" Overlay",0.69,"Pottstown, L. Pottsgrove","15,487",4036,Armand Hammer Bl.,Pottstown, L. Pottsgrove,,10,0,20,1966
+22,SR 4048 Lewis Rd,Linfield Trappe Rd / SR 4022,Main St / SR 4031,"Mill & 1 1/2"" Overlay",5.27,"Trappe, Royersford, U. Providence","11,931",4048,Lewis Rd,Trappe, Royersford, U. Providence,10,0,90,1664

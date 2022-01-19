@@ -1,21 +1,20 @@
 project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
-1.0,SR 0001 City Ave,Mont. Co. Line / Haverford Av / SR 3043,City Line Br. / SR 4006,"Mill & 1 1/2"" Overlay",3.91,PHILADELPHIA,"20,747",0001,City Ave,PHILADELPHIA,,,0010,0000,0080,1210
-1.0,SR 0001 City Ave,Mont. Co. Line / Haverford Av / SR 3043,City Line Br. / SR 4006,"Mill & 1 1/2"" Overlay",3.90,PHILADELPHIA,"20,747",0001,City Ave,PHILADELPHIA,,,0011,0000,0081,1152
-2.0,SR 0003 MARKET ST,Delaware Co. Line,63rd St. / SR 3015,"Mill & 1 1/2"" Overlay",0.05,PHILADELPHIA,"12,598",0003,MARKET ST,PHILADELPHIA,,,0011,0000,0011,0252
-2.0,SR 0003 MARKET ST,0011/0000 Delaware Co. Line,0011/0252 63rd St. / SR 3015,"Mill & 1 1/2"" Overlay",0.04 0.05,PHILADELPHIA,"12,598",0003,MARKET ST,PHILADELPHIA,,,0010,0000,0010,0235
-3.0,SR 0003 Chestnut St,Cobbs Creek Pkwy / SR 0003 / SR 3015,34th St,"Mill & 1 1/2"" Overlay",3.09,PHILADELPHIA,"17,316",0003,Chestnut St,PHILADELPHIA,,,0030,0000,0080,1871
-4.0,SR 0030 Lancaster Ave,City Ave / SR 0001,W. Girad Ave,"Mill & 1 1/2"" Overlay",2.21,PHILADELPHIA,"13,335",0030,Lancaster Ave,PHILADELPHIA,,,0010,0000,0040,3047
-5.0,SR 1007 Tacony St,Torresdale Ave / SR 1004,Levick St / SR 9401,"Mill & 1 1/2"" Overlay",1.48,PHILADELPHIA,"7,561",1007,Tacony St,PHILADELPHIA,,,0031,0000,0061,2593
-5.0,SR 1007 Tacony St,0031/0000 Torresdale Ave / SR 1004,0061/2593 Levick St / SR 9401,"Mill & 1 1/2"" Overlay",2.35 1.48,PHILADELPHIA,"7,561",1007,Tacony St,PHILADELPHIA,,,0010,0000,0060,2663
-6.0,SR 1011 Welsh Rd,0071/0000 Ashton Rd,0101/1712 Kismet Rd,"Mill & 1 1/2"" Overlay",3.04 1.79,PHILADELPHIA,"17,126",1011,Welsh Rd,PHILADELPHIA,,,0030,0000,0100,1719
-6.0,SR 1011 Welsh Rd,Ashton Rd,Kismet Rd,"Mill & 1 1/2"" Overlay",1.79,PHILADELPHIA,"17,126",1011,Welsh Rd,PHILADELPHIA,,,0071,0000,0101,1712
-7.0,SR 2014 Lehigh Ave,0051/0000 Ridge Ave / SR 3009,0091/2437 Richmond St / SR 2001,"Mill & 1 1/2"" Overlay",4.48 1.94,PHILADELPHIA,"9,753",2014,Lehigh Ave,PHILADELPHIA,,,0010,0000,0100,2152
-7.0,SR 2014 Lehigh Ave,Ridge Ave / SR 3009,Richmond St / SR 2001,"Mill & 1 1/2"" Overlay",1.94,PHILADELPHIA,"9,753",2014,Lehigh Ave,PHILADELPHIA,,,0051,0000,0091,2437
-8.0,SR 2016 Allegheny Ave,Ridge Ave / SR 3009,Delaware Ave / SR 1005,"Mill & 1 1/2"" Overlay",5.59,PHILADELPHIA,"14,757",2016,Allegheny Ave,PHILADELPHIA,,,0010,0000,0110,3324
-9.0,SR 3003 26th Steet,0011/0000 Penrose Ave / SR 0291,0041/3272 Bridge over Schuylkill River,"Mill & 1 1/2"" Overlay",1.92 1.92,PHILADELPHIA,"23,892",3003,26th Steet,PHILADELPHIA,,,0010,0000,0040,3241
-9.0,SR 3003 26th Steet,Penrose Ave / SR 0291,Bridge over Schuylkill River,"Mill & 1 1/2"" Overlay",1.92,PHILADELPHIA,"23,892",3003,26th Steet,PHILADELPHIA,,,0011,0000,0041,3272
-10.0,SR 3010 Market St,S. 63rd St / SR 0003,20th St.,"Mill & 1 1/2"" Overlay",3.96,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,0011,0000,0101,1320
-10.0,SR 3010 Market St,S. 63rd St / SR 0003,20th St.,"Mill & 1 1/2"" Overlay",4.39,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,0010,0000,0110,2268
-11.0,SR 3028 John F Kennedy,0011/0000 Market St / SR 3010,0011/1485 N. 30th St / SR 3030,"Mill & 1 1/2"" Overlay",0.27 0.28,PHILADELPHIA,"7,382",3028,John F Kennedy,PHILADELPHIA,,,0010,0000,0010,1444
-11.0,SR 3028 John F Kennedy,Market St / SR 3010,N. 30th St / SR 3030,"Mill & 1 1/2"" Overlay",0.28,PHILADELPHIA,"7,382",3028,John F Kennedy,PHILADELPHIA,,,0011,0000,0011,1485
-12.0,SR 3029 15th Street,Penn Square / SR 3022,Vine St / SR 2676,"Mill & 1 1/2"" Overlay",0.33,PHILADELPHIA,"17,293",3029,15th Street,PHILADELPHIA,,,0011,0000,0011,1726
+1,SR 0001 City Ave,Mont. Co. Line / Haverford Av / SR 3043,City Line Br. / SR 4006,"Mill & 1 1/2"" Overlay",3.91,PHILADELPHIA,"20,747",1,City Ave,PHILADELPHIA,,,10,0,80,1210
+1,SR 0001 City Ave,Mont. Co. Line / Haverford Av / SR 3043,City Line Br. / SR 4006,"Mill & 1 1/2"" Overlay",3.9,PHILADELPHIA,"20,747",1,City Ave,PHILADELPHIA,,,11,0,81,1152
+2,SR 0003 MARKET ST,Delaware Co. Line,63rd St. / SR 3015,"Mill & 1 1/2"" Overlay",0.05,PHILADELPHIA,"12,598",3,MARKET ST,PHILADELPHIA,,,11,0,11,252
+2,SR 0003 MARKET ST,0011/0000 Delaware Co. Line,0011/0252 63rd St. / SR 3015,"Mill & 1 1/2"" Overlay",0.04 0.05,PHILADELPHIA,"12,598",3,MARKET ST,PHILADELPHIA,,,10,0,10,235
+3,SR 0003 Chestnut St,Cobbs Creek Pkwy / SR 0003 / SR 3015,34th St,"Mill & 1 1/2"" Overlay",3.09,PHILADELPHIA,"17,316",3,Chestnut St,PHILADELPHIA,,,30,0,80,1871
+4,SR 0030 Lancaster Ave,City Ave / SR 0001,W. Girad Ave,"Mill & 1 1/2"" Overlay",2.21,PHILADELPHIA,"13,335",30,Lancaster Ave,PHILADELPHIA,,,10,0,40,3047
+5,SR 1007 Tacony St,Adams Ave,Aramingo Ave,"Mill & 1 1/2"" Overlay",0.85,PHILADELPHIA,"7,561",1007,Tacony St,PHILADELPHIA,,,10,700,20,1580
+6,SR 1011 Welsh Rd,0071/0000 Ashton Rd,0101/1712 Kismet Rd,"Mill & 1 1/2"" Overlay",3.04 1.79,PHILADELPHIA,"17,126",1011,Welsh Rd,PHILADELPHIA,,,30,0,100,1719
+6,SR 1011 Welsh Rd,Ashton Rd,Kismet Rd,"Mill & 1 1/2"" Overlay",1.79,PHILADELPHIA,"17,126",1011,Welsh Rd,PHILADELPHIA,,,71,0,101,1712
+7,SR 2014 Lehigh Ave,0051/0000 Ridge Ave / SR 3009,0091/2437 Richmond St / SR 2001,"Mill & 1 1/2"" Overlay",4.48 1.94,PHILADELPHIA,"9,753",2014,Lehigh Ave,PHILADELPHIA,,,10,0,100,2152
+7,SR 2014 Lehigh Ave,Ridge Ave / SR 3009,Richmond St / SR 2001,"Mill & 1 1/2"" Overlay",1.94,PHILADELPHIA,"9,753",2014,Lehigh Ave,PHILADELPHIA,,,51,0,91,2437
+8,SR 2016 Allegheny Ave,Ridge Ave / SR 3009,Delaware Ave / SR 1005,"Mill & 1 1/2"" Overlay",5.59,PHILADELPHIA,"14,757",2016,Allegheny Ave,PHILADELPHIA,,,10,0,110,3324
+9,SR 3003 26th Steet,0011/0000 Penrose Ave / SR 0291,0041/3272 Bridge over Schuylkill River,"Mill & 1 1/2"" Overlay",1.92 1.92,PHILADELPHIA,"23,892",3003,26th Steet,PHILADELPHIA,,,10,0,40,3241
+9,SR 3003 26th Steet,Penrose Ave / SR 0291,Bridge over Schuylkill River,"Mill & 1 1/2"" Overlay",1.92,PHILADELPHIA,"23,892",3003,26th Steet,PHILADELPHIA,,,11,0,41,3272
+10,SR 3010 Market St,S. 63rd St / SR 0003,Schuylkill Ave,"Mill & 1 1/2"" Overlay",3.52,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,11,0,81,1641
+10,SR 3010 Market St,S. 63rd St / SR 0003,Schuylkill Ave,"Mill & 1 1/2"" Overlay",3.52,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,10,0,80,1640
+10,SR 3010 Market St,S. 63rd St / SR 0003,Schuylkill Ave,"Mill & 1 1/2"" Overlay",0.68,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,100,0,110,2268
+10,SR 3010 Market St,S. 63rd St / SR 0003,Schuylkill Ave,"Mill & 1 1/2"" Overlay",0.25,PHILADELPHIA,"14,958",3010,Market St,PHILADELPHIA,,,101,0,101,1320
+11,SR 3029 15th Street,Penn Square / SR 3022,Vine St / SR 2676,"Mill & 1 1/2"" Overlay",0.33,PHILADELPHIA,"17,293",3029,15th Street,PHILADELPHIA,,,11,0,11,1726
