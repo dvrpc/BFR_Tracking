@@ -63,7 +63,7 @@ results = gpd.GeoDataFrame.from_postgis(
 		SELECT
 			"ST_RT_NO" as srno ,
 			CAST("CTY_CODE" AS numeric) as co_no,
-			CAST("SEG_BGN" AS numeric) as seg_no,
+			CAST("SEG_NO" AS numeric) as seg_no,
 			geometry 
 		FROM penndot_rms
 		),

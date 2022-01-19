@@ -166,34 +166,6 @@ def main():
         tiles="cartodbpositron",
         zoom_start=9,
     )
-    # add 5-year plan segments to the map
-    for geojsonfilepath in mapped_seg.rglob("*.geojson"):
-        file_name = geojsonfilepath.stem
-        print("Adding", file_name)
-        folium.GeoJson(
-            json.load(open(geojsonfilepath)),
-            name="5-year Plan 2022-2026",
-            style_function=lambda x: {
-                "color": "green"
-                if x["properties"]["Year"] == "2022"
-                else "pink"
-                if x["properties"]["Year"] == "2023"
-                else "red"
-                if x["properties"]["Year"] == "2024"
-                else "purple"
-                if x["properties"]["Year"] == "2025"
-                else "darkblue"
-                if x["properties"]["Year"] == "2026"
-                else "blue",
-                "weight": "1",
-            },
-            popup=folium.GeoJsonPopup(
-                fields=["sr", "Year"],
-                aliases=["State Route: ", "Planned Year: "],
-            ),
-            zoom_on_click=True,
-        ).add_to(m)
-
     # add package geojson files to the map
     for geojsonfilepath in data_dir.rglob("*.geojson"):
         file_name = geojsonfilepath.stem
@@ -212,8 +184,8 @@ def main():
                 # else "purple"
                 # if x["properties"]["status"] == "Partially Evaluated"
                 # else "black",
-                "weight": "4",
-                "opacity": 0.65,
+                "weight": "6",
+                "opacity": 0.4,
             },
             popup=folium.GeoJsonPopup(
                 fields=["sr", "name"],
@@ -222,11 +194,46 @@ def main():
             zoom_on_click=False,
         ).add_to(m)
 
+    # add 5-year plan segments to the map
+    for geojsonfilepath in mapped_seg.rglob("*.geojson"):
+        file_name = geojsonfilepath.stem
+        print("Adding", file_name)
+        folium.GeoJson(
+            json.load(open(geojsonfilepath)),
+            name="5-year Plan 2022-2026",
+            style_function=lambda x: {
+                "color": "green"
+                if x["properties"]["Year"] == "2022"
+                else "orange"
+                if x["properties"]["Year"] == "2023"
+                else "red"
+                if x["properties"]["Year"] == "2024"
+                else "purple"
+                if x["properties"]["Year"] == "2025"
+                else "darkblue"
+                if x["properties"]["Year"] == "2026"
+                else "blue",
+                "weight": "1",
+            },
+            popup=folium.GeoJsonPopup(
+                fields=["sr", "Year"],
+                aliases=["State Route: ", "Planned Year: "],
+            ),
+            zoom_on_click=True,
+        ).add_to(m)
+
     m = add_categorical_legend(
         m,
         "Legend",
-        colors=["green", "pink", "red", "purple", "darkblue"],
-        labels=["2022", "2023", "2024", "2025", "2026"],
+        colors=["yellow", "green", "orange", "red", "purple", "darkblue"],
+        labels=[
+            "2022 Paving Package",
+            "Planned: 2022",
+            "Planned: 2023",
+            "Planned: 2024",
+            "Planned: 2025",
+            "Planned: 2026",
+        ],
     )
 
     # add layer toggle box and save to HTML file

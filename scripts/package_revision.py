@@ -17,7 +17,7 @@ modified CSV files.
 from import_oracle import main as importer
 from update_db_with_revision import main as updater
 from map_packages import main as mapper
-from make_folium_map import main as webmapper
+from make_folium_map_newplan_and_packages import main as webmapper
 
 # print("Importing from Oracle")
 # importer()

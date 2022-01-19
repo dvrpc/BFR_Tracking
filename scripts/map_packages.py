@@ -53,7 +53,7 @@ def map_package(package_name):
 		SELECT
 			"ST_RT_NO" as srno,
 			CAST("CTY_CODE" AS numeric) as co_no,
-			CAST("SEG_BGN" AS numeric) as seg_no,
+			CAST("SEG_NO" AS numeric) as seg_no,
 			geometry 
 		FROM penndot_rms
 		WHERE "CTY_CODE" = '{code}'
@@ -117,7 +117,7 @@ def summarize_evaluted_segments(package_name):
 			SELECT
 				"ST_RT_NO" as srno,
 				CAST("CTY_CODE" AS numeric) as co_no,
-				CAST("SEG_BGN" AS numeric) as seg_no,
+				CAST("SEG_NO" AS numeric) as seg_no,
 				geometry 
 			FROM penndot_rms
 			WHERE "CTY_CODE" = '{code}'
@@ -187,7 +187,7 @@ def flag_not_evaluated_segments(package_name):
 			SELECT
 				"ST_RT_NO" as srno,
 				CAST("CTY_CODE" AS numeric) as co_no,
-				CAST("SEG_BGN" AS numeric) as seg_no,
+				CAST("SEG_NO" AS numeric) as seg_no,
 				geometry 
 			FROM penndot_rms
 			WHERE "CTY_CODE" = '{code}'
