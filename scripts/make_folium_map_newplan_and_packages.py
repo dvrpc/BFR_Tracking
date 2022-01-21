@@ -222,6 +222,24 @@ def main():
             zoom_on_click=True,
         ).add_to(m)
 
+    # add title
+    title = "5-year Resurfacing Plan (2022-2026)"
+    title_html = """
+            <h3 align="center" style="font-size:15px"><b>{}</b></h3>
+            """.format(
+        title
+    )
+    m.get_root().html.add_child(folium.Element(title_html))
+    source = (
+        "Data source: PennDOT District 6, Created by DVRPC, Last Updated: January 2022"
+    )
+    source_html = """
+            <h6 align="center" style="font-size:10px"><i>{}</i></h6>
+            """.format(
+        source
+    )
+    m.get_root().html.add_child(folium.Element(source_html))
+
     m = add_categorical_legend(
         m,
         "Legend",
@@ -237,7 +255,7 @@ def main():
     )
 
     # add layer toggle box and save to HTML file
-    folium.LayerControl().add_to(m)
+    # folium.LayerControl().add_to(m)
 
     print("Writing HTML file to", output_path)
     m.save(output_path)
