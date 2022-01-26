@@ -1,5 +1,5 @@
 """
-make_folium_map.py
+make_folium_map_newplan_and_packages.py
 ------------------
 
 This script makes a HTML map using folium
