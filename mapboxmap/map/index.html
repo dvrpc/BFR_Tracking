@@ -28,7 +28,31 @@
       <h1>5-YEAR RESURFACING PLAN (2022-2026)</h1>
     </div>
     <div>
-      <img class="a" src="./img/info.png" alt="info icon" />
+      <div class="popup" onclick="myFunction()">
+        <img class="a" src="./img/info.png" alt="info icon" />
+        <span class="popuptext" id="myPopup">
+          <h5>ABOUT</h5>
+          This map shows PennDOT-owned roads on District 6's resurfacing plan
+          for the next few years. Segments identified in the most recent paving
+          package are highlighted. The plan is dynamic, changing based on road
+          conditions, budgets, and other maintenance priorities. This map is
+          updated as new plans are made available through PennDOT's website and
+          as new paving packages are released.
+          <h5>CONTACT:</h5>
+          Sarah Moran, smoran@dvrpc.org
+          <h5>
+            <a href="https://www.dvrpc.org/policies" target="_blank"
+              >POLICIES
+            </a>
+          </h5>
+        </span>
+      </div>
+      <script>
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+      </script>
     </div>
     <div id="legend" class="legend">
       <h4>KEY</h4>

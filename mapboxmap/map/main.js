@@ -1,5 +1,6 @@
 import sources from "./mapSources.js";
 import layers from "./mapLayers.js";
+//import popup_on_click from "./popups.js";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZHZycGNvbWFkIiwiYSI6ImNrczZlNDBkZzFnOG0ydm50bXR0dTJ4cGYifQ.VaJDo9EtH2JyzKm3cC0ypA";
@@ -38,9 +39,4 @@ map.on("mouseleave", "planned-segments", () => {
   map.getCanvas().style.cursor = "";
 });
 
-map.on("click", "planned-segments", (e) => {
-  const coordinates = e.features[0].geometry.coordinates.slide();
-  const description = e.features[0].properties.description;
-
-  new mapboxgl.Popup().setLngLat(coordinates).setHTML("<p>test</p>").addTo(map);
-});
+//popup_on_click(map);
