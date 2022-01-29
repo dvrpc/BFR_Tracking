@@ -25,4 +25,4 @@ const sources = {
   },
 };
 
-export default sources;
+export { sources };
