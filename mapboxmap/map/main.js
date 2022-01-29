@@ -1,9 +1,9 @@
-import { sources } from "./sources.js";
-import { layers } from "./layers.js";
-import { add_pointer_when_hovering } from "./hover.js";
-import { make_popup } from "./popup.js";
-import { make_popup_message } from "./click.js";
-import { make_map } from "./map.js";
+import { sources } from "./js/sources.js";
+import { layers } from "./js/layers.js";
+import { add_pointer_when_hovering } from "./js/hover.js";
+import { make_popup } from "./js/popup.js";
+import { make_popup_message } from "./js/click.js";
+import { make_map } from "./js/map.js";
 
 const map = make_map();
 
