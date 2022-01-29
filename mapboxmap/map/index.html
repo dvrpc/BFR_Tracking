@@ -28,7 +28,7 @@
       <h1>5-YEAR RESURFACING PLAN (2022-2026)</h1>
     </div>
     <div>
-      <div class="popup" onclick="myFunction()">
+      <div class="popup" onclick="toggle_info_box()">
         <img class="a" src="./img/info.png" alt="info icon" />
         <span class="popuptext" id="myPopup">
           <h5>ABOUT</h5>
@@ -48,7 +48,7 @@
         </span>
       </div>
       <script>
-        function myFunction() {
+        function toggle_info_box() {
           var popup = document.getElementById("myPopup");
           popup.classList.toggle("show");
         }
