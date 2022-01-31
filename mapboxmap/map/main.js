@@ -8,10 +8,19 @@ import { make_map } from "./js/map.js";
 const map = make_map();
 
 map.on("load", () => {
+  //move labels on top of linework
+  const lays = map.getStyle().layers;
+  let firstSymbolId;
+  for (const lay of lays) {
+    if (lay.type === "symbol") {
+      firstSymbolId = lay.id;
+      break;
+    }
+  }
   //load sources
   for (const source in sources) map.addSource(source, sources[source]);
   //load layer styles
-  for (const layer in layers) map.addLayer(layers[layer]);
+  for (const layer in layers) map.addLayer(layers[layer], firstSymbolId);
 
   // set the pointer style when hovering specific layers
   ["planned-segments", "B12", "C12", "D13", "M11", "P12"].forEach((layer) => {

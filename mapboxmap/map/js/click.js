@@ -13,7 +13,8 @@ const make_popup_message = (featurelist) => {
         <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
         <p>Planned Year: ${feature.properties.Year}<br/>
         From: ${feature.properties.From}<br/>
-        To: ${feature.properties.To}
+        To: ${feature.properties.To}<br/>
+        Municipalities: ${feature.properties.muni}
         </p>
         `;
       if (messages.indexOf(msg) == -1) {
@@ -22,14 +23,7 @@ const make_popup_message = (featurelist) => {
     }
     // Handle yellow layers for county-specific 2022 schedule
     // TODO: duplicates may show up if one layer uses "AVE" and the other uses "AV" (etc...)
-    else if (feature.layer.source == "boundaries_poly") {
-      let msg = `
-        <p>Municipality: ${feature.properties.mun_name}<p/>
-        `;
-      if (messages.indexOf(msg) == -1) {
-        messages.push(msg);
-      }
-    } else {
+    else {
       let msg = `
         <h4>Included in 2022 Paving Package
       </h4>

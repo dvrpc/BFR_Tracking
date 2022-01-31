@@ -15,20 +15,6 @@ const layers = {
     },
     filter: ["all", ["==", "dvrpc_reg", "Yes"], ["==", "state", "PA"]],
   },
-  boundaries_poly: {
-    id: "boundaries_poly",
-    type: "fill",
-    source: "boundaries",
-    paint: {
-      "fill-color": "#000000",
-      "fill-opacity": 100,
-    },
-    filter: ["all", ["==", "dvrpc_reg", "Yes"], ["==", "state", "PA"]],
-    layout: {
-      "text-field": ["get", "mun_name"],
-      "text-justify": "auto",
-    },
-  },
   plan: {
     id: "planned-segments",
     type: "line",
