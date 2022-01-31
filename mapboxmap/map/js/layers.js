@@ -5,6 +5,30 @@ const yellow_paint_style = {
 };
 
 const layers = {
+  boundaries: {
+    id: "boundaries",
+    type: "line",
+    source: "boundaries",
+    paint: {
+      "line-color": "#d4d5d6",
+      "line-width": 1,
+    },
+    filter: ["all", ["==", "dvrpc_reg", "Yes"], ["==", "state", "PA"]],
+  },
+  boundaries_poly: {
+    id: "boundaries_poly",
+    type: "fill",
+    source: "boundaries",
+    paint: {
+      "fill-color": "#000000",
+      "fill-opacity": 100,
+    },
+    filter: ["all", ["==", "dvrpc_reg", "Yes"], ["==", "state", "PA"]],
+    layout: {
+      "text-field": ["get", "mun_name"],
+      "text-justify": "auto",
+    },
+  },
   plan: {
     id: "planned-segments",
     type: "line",

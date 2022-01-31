@@ -14,7 +14,7 @@ map.on("load", () => {
   for (const layer in layers) map.addLayer(layers[layer]);
 
   // set the pointer style when hovering specific layers
-  ["planned-segments", "B12"].forEach((layer) => {
+  ["planned-segments", "B12", "C12", "D13", "M11", "P12"].forEach((layer) => {
     add_pointer_when_hovering(map, layer);
   });
 

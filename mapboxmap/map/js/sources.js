@@ -23,6 +23,10 @@ const sources = {
     type: "geojson",
     data: "./data/P12_mappedreport.geojson",
   },
+  boundaries: {
+    type: "geojson",
+    data: "./data/municipal_boundaries.geojson",
+  },
 };
 
 export { sources };
