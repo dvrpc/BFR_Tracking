@@ -17,7 +17,7 @@ print("Importing from Oracle")
 importer()
 print("Scraping Paving Packages")
 # do not re-scrape packages that have been revised. Instead, use package_revision.py
-# scrape()
+scrape()
 print("Comparing and Mapping Paving Package Segments")
 mapper()
 print("Rendering Webmap")
