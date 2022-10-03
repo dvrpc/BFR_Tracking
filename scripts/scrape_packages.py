@@ -97,6 +97,12 @@ def read_single_page_from_pdf(
     # drop the 'total' row if it's in the dataframe
     df = drop_total_row_if_exists(df)
 
+    #data_folder = Path("./data")
+    #paving_package = data_folder / "paving_package"
+    #output_folder = paving_package / "test"
+    #output_filepath = output_folder / f"{filepath.stem}.csv"
+    #df.to_csv(output_filepath, index=False)
+
     return df
 
 

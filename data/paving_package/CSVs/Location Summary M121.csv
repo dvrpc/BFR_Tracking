@@ -1,0 +1,13 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 0023 Valley Forge Rd,Valley Forge Cr / Moore Rd,Allendale Rd,"Mill & 1 1/2"" Overlay",0.77,Upper Merion,"21,430",0023,Valley Forge Rd,Upper Merion,,,0090,0000,0110,1080
+1.0,SR 0023 Valley Forge Rd,Valley Forge Cr / Moore Rd,Allendale Rd,"Mill & 1 1/2"" Overlay",0.20,Upper Merion,"21,430",0023,Valley Forge Rd,Upper Merion,,,0111,0000,0111,1072
+2.0,SR 0063 Main St,Orvilla Rd / SR 1004,Greenwood Rd,"Mill & 1 1/2"" Overlay",2.35,Lansdale Towamencin Montgomery,"14,241",0063,Main St,Lansdale Towamencin Montgomery,,,0252,0000,0312,1564
+3.0,SR 0320 Spring Mill Rd / South Gulph Rd / Swedeland Rd,0031/0000 County Line Rd / Del. Co. Line,0031/0453 River Rd / SR 0023,"Mill & 1 1/2"" Overlay",2.55 0.09,Upper Merion Lower Merion,"18,188 9,095",0320,Spring Mill Rd / South Gulph Rd / Swedeland Rd,Upper Merion Lower Merion,,,0010,0000,0060,2581
+3.0,SR 0320 Spring Mill Rd / South Gulph Rd / Swedeland Rd,County Line Rd / Del. Co. Line,River Rd / SR 0023,"Mill & 1 1/2"" Overlay",0.09,Upper Merion Lower Merion,"18,188 9,095",0320,Spring Mill Rd / South Gulph Rd / Swedeland Rd,Upper Merion Lower Merion,,,0031,0000,0031,0453
+4.0,SR 1032 Upper Ridge Rd,Gravel Pk / SR 0029,Ziegler Rd / Bucks Co. Line,"2 1/2"" Binder",5.57,Green Lane Marlborough,"1,470",1032,Upper Ridge Rd,Green Lane Marlborough,,,0010,0000,0100,3222
+5.0,SR 1044 Bethesda Church Rd / Adams Rd / Palm Hill Rd,Kutztown Rd / SR 1033,Gravel Pk / SR 0029,"2 1/2"" Binder",1.99,Upper Hanover,619,1044,Bethesda Church Rd / Adams Rd / Palm Hill Rd,Upper Hanover,,,0010,0000,0044,1599
+6.0,SR 2018 Bethlehem Pk,0011/0000 Stenton Ave / SR 3003 / Paper Mill Rd / SR 2032,0041/1309 Church Rd / SR 0073,"Mill & 1 1/2"" Overlay",2.38 1.80,Whitemarch Springfield,"16,466 10,965",2018,Bethlehem Pk,Whitemarch Springfield,,,0010,0000,0050,3074
+6.0,SR 2018 Bethlehem Pk,Stenton Ave / SR 3003 / Paper Mill Rd / SR 2032,Church Rd / SR 0073,"Mill & 1 1/2"" Overlay",1.80,Whitemarch Springfield,"16,466 10,965",2018,Bethlehem Pk,Whitemarch Springfield,,,0011,0000,0041,1309
+7.0,SR 3003 Stenton Ave / Penllyn Blue Bell Pk,Norfolk Southern RR Bridge,Skippack Pk / SR 0073,"Mill & 1 1/2"" Overlay",4.02,Whitpain Whitemarsh,"11,654",3003,Stenton Ave / Penllyn Blue Bell Pk,Whitpain Whitemarsh,,,0060,0000,0130,3765
+8.0,SR 3004 Burnside Ave / Potshop Rd / Berks Rd,Main St / SR 3009,Skippack Pk / SR 0073,"Mill & 1 1/2"" Overlay",3.22,Worcester West Norriton,"6,215",3004,Burnside Ave / Potshop Rd / Berks Rd,Worcester West Norriton,,,0010,0000,0090,2681
+9.0,SR 3011 Barren Hill Rd,Ridge Rd,Hector Rd / SR 3058,"Mill & 1 1/2"" Overlay",1.74,Whitemarsh,"6,290",3011,Barren Hill Rd,Whitemarsh,,,0010,0000,0040,2547

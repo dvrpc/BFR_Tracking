@@ -63,8 +63,23 @@ q_beyond_scope = """UPDATE filter_flags
 
 q_no_status = """UPDATE filter_flags
                 SET status = 'Not Reviewed'
-                WHERE status = 'N/A'; """
+                WHERE status IS NULL; """
 
+
+def status():
+    ENGINE.execute(q_create_field)
+    ENGINE.execute(q_initial_screening)
+    ENGINE.execute(q_dvrpc_screen)
+    ENGINE.execute(q_pending_review)
+    ENGINE.execute(q_penndot_screen)
+    ENGINE.execute(q_outreach_prio)
+    ENGINE.execute(q_begin_outreach)
+    ENGINE.execute(q_letter_pending)
+    ENGINE.execute(q_letter_received)
+    ENGINE.execute(q_completed)
+    ENGINE.execute(q_capacity_analysis)
+    ENGINE.execute(q_beyond_scope)
+    ENGINE.execute(q_no_status)
 
 def main():
     filters = fr"{ev.DATA_ROOT}\from_oracle\filter_flags.csv"
@@ -73,8 +88,8 @@ def main():
     # write dataframe to postgis, replacing old table
     df.to_sql("filter_flags", con=ENGINE, if_exists="replace")
 
-    
-
+    #run queries to add and populate status field
+    status()
 
 
 if __name__ == "__main__":

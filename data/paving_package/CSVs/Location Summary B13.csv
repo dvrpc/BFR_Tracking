@@ -1,0 +1,11 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 0332 Newtown BP,Richboro Rd / Newtown BP (SR 0413),Newtown Gate Dr / Summit Trace Rd,"Mill & 1 1/2"" Overlay",1.56,Newtown,"19,869 18,994",0332,Newtown BP,Newtown,,,0192,0000,0212,1669
+1.0,SR 0332 Newtown BP,Richboro Rd / Newtown BP (SR 0413),Newtown Gate Dr / Summit Trace Rd,"Mill & 1 1/2"" Overlay",1.55,Newtown,"19,869 18,994",0332,Newtown BP,Newtown,,,0193,0000,0213,1640
+2.0,SR 0413 Pine St / Newtown Langhorne Rd / Newtown BP,0271/0000 300' N of E Gilliam Ave,0311/2694 Richboro Rd / Newtown BP (SR 0332),"Mill & 1 1/2"" Overlay",3.79 0.68,Langhorne Newtown Middletown,"21,094 11,575",0413,Pine St / Newtown Langhorne Rd / Newtown BP,Langhorne Newtown Middletown,,,0220,0000,0310,2743
+2.0,SR 0413 Pine St / Newtown Langhorne Rd / Newtown BP,300' N of E Gilliam Ave,Richboro Rd / Newtown BP (SR 0332),"Mill & 1 1/2"" Overlay",0.68,Langhorne Newtown Middletown,"21,094 11,575",0413,Pine St / Newtown Langhorne Rd / Newtown BP,Langhorne Newtown Middletown,,,0271,0000,0311,2694
+3.0,SR 1010 Tohickon Hill Rd,Stump Rd (SR 1011) / Covered Bridge Road,River Rd (SR 0032) / Point Pleasant Pk (SR 1006),"2 1/2"" Binder",2.37,Plumstead,831,1010,Tohickon Hill Rd,Plumstead,,,0104,0000,0140,2539
+4.0,SR 1014 Creamery Rd / Geigel Hill Rd,Tohickon Creek,Swamp Creek Rd,"2 1/2"" Binder",6.23,Tinicum Bedminster,725,1014,Creamery Rd / Geigel Hill Rd,Tinicum Bedminster,,,0070,0000,0170,1920
+5.0,SR 2034 Pineville Rd,Windy Bush Rd (SR 0232),Eagle Rd (SR 2083),"Mill & 1 1/2"" Overlay",2.82,Wrightstown Upper Makefiled,"3,205",2034,Pineville Rd,Wrightstown Upper Makefiled,,,0010,0000,0040,3808
+6.0,SR 2071 Pine Grove Rd / Yardley Morrisville Rd,Lincoln Hwy (SR 0001),Delavue Rd,"Mill & 1 1/2"" Overlay",2.69,Lower Makefield Falls,"11,022",2071,Pine Grove Rd / Yardley Morrisville Rd,Lower Makefield Falls,,,0010,0000,0070,2014
+7.0,SR 2071 Taylorsville Rd,Dyers Creek,River Rd (SR 0032),"Mill & 1 1/2"" Overlay",4.08,Upper Makefield Lower Makefield,"11,346",2071,Taylorsville Rd,Upper Makefield Lower Makefield,,,0160,0000,0230,3010
+8.0,SR 4019 Minsi Tr,Blooming Glen Rd (SR 4089),Dublin Pk (SR 0313),"2 1/2"" Binder",2.48,Hilltown,"2,672",4019,Minsi Tr,Hilltown,,,0030,0000,0060,3185

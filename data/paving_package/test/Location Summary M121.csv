@@ -1,0 +1,10 @@
+project_num,SR_name,from,to,scope,miles,muni,adt
+1,"SR 0023Valley Forge Rd","0090/00000111/0000Valley Forge Cr / Moore Rd","0110/10800111/1072Allendale Rd","Mill &1 1/2"" Overlay","0.770.20",Upper Merion,"21,430"
+2,"SR 0063Main St","0252/0000Orvilla Rd / SR 1004","0312/1564Greenwood Rd","Mill &1 1/2"" Overlay",2.35,"LansdaleTowamencinMontgomery","14,241"
+3,"SR 0320Spring Mill Rd /South Gulph Rd /Swedeland Rd","0010/00000031/0000County Line Rd / Del. Co.Line","0060/25810031/0453River Rd / SR 0023","Mill &1 1/2"" Overlay","2.550.09","Upper MerionLower Merion","18,1889,095"
+4,"SR 1032Upper Ridge Rd","0010/0000Gravel Pk / SR 0029","0100/3222Ziegler Rd / Bucks Co. Line","2 1/2"" Binder",5.57,"Green LaneMarlborough","1,470"
+5,"SR 1044Bethesda Church Rd /Adams Rd /Palm Hill Rd","0010/0000Kutztown Rd / SR 1033","0044/1599Gravel Pk / SR 0029","2 1/2"" Binder",1.99,Upper Hanover,619
+6,"SR 2018Bethlehem Pk","0010/00000011/0000Stenton Ave / SR 3003 /Paper Mill Rd / SR 2032","0050/30740041/1309Church Rd / SR 0073","Mill &1 1/2"" Overlay","2.381.80","WhitemarchSpringfield","16,46610,965"
+7,"SR 3003Stenton Ave /Penllyn Blue Bell Pk","0060/0000Norfolk Southern RR Bridge","0130/3765Skippack Pk / SR 0073","Mill &1 1/2"" Overlay",4.02,"WhitpainWhitemarsh","11,654"
+8,"SR 3004Burnside Ave /Potshop Rd /Berks Rd","0010/0000Main St / SR 3009","0090/2681Skippack Pk / SR 0073","Mill &1 1/2"" Overlay",3.22,"WorcesterWest Norriton","6,215"
+9,"SR 3011Barren Hill Rd","0010/0000Ridge Rd","0040/2547Hector Rd / SR 3058","Mill &1 1/2"" Overlay",1.74,Whitemarsh,"6,290"

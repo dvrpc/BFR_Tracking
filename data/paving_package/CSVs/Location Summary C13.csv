@@ -1,0 +1,17 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+1.0,SR 0010 Limestone Rd,Market St / SR 0472,Gap Newport Pk / SR 0041,"Mill & 1 1/2"" Overlay",8.49,Oxford West Fallowfield Upper Oxford,"11,298",0010,Limestone Rd,Oxford West Fallowfield Upper Oxford,,,0010,0000,0180,0512
+2.0,SR 0010 Octorara Tr / Compass Rd / Honey Brook Rd,Lincoln Hwy / SR 0030,Beaver Dam Rd,"Mill & 1 1/2"" Overlay",6.10,West Sadsbury West Caln Sadsbury,"6,351",0010,Octorara Tr / Compass Rd / Honey Brook Rd,West Sadsbury West Caln Sadsbury,,,0290,0000,0430,1440
+3.0,SR 0023 Nutt Rd,Kimberton Rd / SR 0113,Main St / Manavon St / SR 0029,"Mill & 1 1/2"" Overlay",1.33,Phoenixville,"22,762",0023,Nutt Rd,Phoenixville,,,0410,0000,0450,1128
+4.0,SR 0029 Morehall Rd,Lancaster Ave / SR 0030,Phoenixville Pk / SR 1003 / Charlestown Rd / SR 1019,"Mill & 1 1/2"" Overlay",2.60,East Whiteland Charlestown,"18,217 17,349",0029,Morehall Rd,East Whiteland Charlestown,,,0010,0000,0070,1310
+4.0,SR 0029 Morehall Rd,Lancaster Ave / SR 0030,Phoenixville Pk / SR 1003 / Charlestown Rd / SR 1019,"Mill & 1 1/2"" Overlay",2.60,East Whiteland Charlestown,"18,217 17,349",0029,Morehall Rd,East Whiteland Charlestown,,,0011,0000,0071,1288
+5.0,SR 0345 Bulltown Rd,French SBR. Bridge,Ridge Rd / SR 0023,"Mill & 1 1/2"" Overlay",0.92,Warwick East Nantmeal,"3,271",0345,Bulltown Rd,Warwick East Nantmeal,,,0040,0000,0050,1915
+6.0,SR 0796 Kelton Jennersville Rd / Daleville Jennersville Rd,Newark Rd / SR 0896,Gap Newport Pk / SR 0041,"Mill & 1 1/2"" Overlay",5.79,Penn New London Londonderry,"10,516",0796,Kelton Jennersville Rd / Daleville Jennersville Rd,Penn New London Londonderry,,,0010,0000,0110,3137
+7.0,SR 1017 Pickering Dam Rd,Charlestown Rd / SR 1019,State Rd / SR 0029,"2 1/2"" Binder",0.86,Charlestown,91,1017,Pickering Dam Rd,Charlestown,,,0030,0000,0040,1407
+8.0,SR 1043 New St / Main St / Bridge St,Schuylkill Rd / SR 0724,Mont. Co. Line,"Mill & 1 1/2"" Overlay",1.06,Spring City East Vincent,"22,919",1043,New St / Main St / Bridge St,Spring City East Vincent,,,0010,0000,0030,1218
+9.0,SR 2014 Paoli Pk,0011/0000 Market St / SR 0003,0021/3463 Five Points Rd,"Mill & 1 1/2"" Overlay",0.81 0.84,West Goshen London Grove,"13,357 12,535",2014,Paoli Pk,West Goshen London Grove,,,0010,0000,0020,3501
+9.0,SR 2014 Paoli Pk,Market St / SR 0003,Five Points Rd,"Mill & 1 1/2"" Overlay",0.84,West Goshen London Grove,"13,357 12,535",2014,Paoli Pk,West Goshen London Grove,,,0011,0000,0021,3463
+10.0,SR 4003 Wagontown Rd,Manor Rd,Rock Run Rd,"2 1/2"" Binder",0.98,Valley,"1,220",4003,Wagontown Rd,Valley,,,0010,0000,0020,1870
+11.0,SR 4005 Caln Rd,Fisherville Rd / SR 4022,Lincoln Hwy / SR 3070,"Mill & 1 1/2"" Overlay",1.35,Caln,"8,064",4005,Caln Rd,Caln,,,0160,0000,0170,3776
+12.0,SR 4018 Harmonyville Rd,Berks Co. Line,Pine Swamp Rd / SR 0345,"2 1/2"" Binder",0.73,Warwick,180,4018,Harmonyville Rd,Warwick,,,0010,0000,0010,3833
+13.0,SR 4018 Harmonyville Rd,Pigeon Creek / Bridge,French Creek / Bridge,"2 1/2"" Binder",0.58,Warwick,156,4018,Harmonyville Rd,Warwick,,,0034,0000,0034,3078
+14.0,SR 4043 St Peters Rd,School Rd / SR 4041,Temple Rd,"2 1/2"" Binder",4.87,Warwick North Coventry,717,4043,St Peters Rd,Warwick North Coventry,,,0010,0000,0070,1664

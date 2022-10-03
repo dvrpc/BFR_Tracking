@@ -1,0 +1,8 @@
+project_num,SR_name,from,to,scope,miles,muni,adt,sr,name,muni1,muni2,muni3,fsegment,foffset,tsegment,toffset
+10,SR 3014 Joshua Rd /Lafayette Rd,Cedar Grove Rd / SR 3011,Morris Rd / SR 2001,"Mill & 1 1/2"" Overlay",5.37,Whitemarsh,"14,149",3014,Joshua Rd /Lafayette Rd,Whitemarsh,,,10,0,110,1887
+11,SR 3036 Swedesford Rd,Guthrie Rd / SR 3033,Warner Rd,"Mill & 1 1/2"" Overlay",0.38,Upper Merion,"12,645",3036,Swedesford Rd,Upper Merion,,,4,0,10,770
+11,SR 3036 Swedesford Rd,Guthrie Rd / SR 3033,Warner Rd,"Mill & 1 1/2"" Overlay",0.23,Upper Merion,"5,958",3036,Swedesford Rd,Upper Merion,,,5,0,5,1212
+12,SR 3041 Swedeland Rd,South Gulph Rd / SR 3039,Holstein Rd / SR 0320,"2 1/2"" Binder",0.38,Upper Merion,"2,876",3041,Swedeland Rd,Upper Merion,,,12,0,12,1988
+13,SR 3061 Bala Ave,City Ave / SR 0001,Montgomery Ave.,"2 1/2"" Binder",0.48,Lower Merion,"2,902",3016,Bala Ave,Lower Merion,,,10,0,10,2552
+14,SR 4031 High St,Pleasant View Rd /SR 4028,Berks Co. Line,"Mill &1 1/2"" Overlay",5.18,Pottstown West Pottsgrove Lower Pottsgrove,"15,066",4031,High St,Pottstown,West Pottsgrove,Lower Pottsgrove,310,0,420,1758
+14,SR 4031 High St,Pleasant View Rd /SR 4028,Berks Co. Line,"Mill &1 1/2"" Overlay",2.11,Pottstown West Pottsgrove Lower Pottsgrove,"7,656",4031,High St,Pottstown,West Pottsgrove,Lower Pottsgrove,321,0,421,1750

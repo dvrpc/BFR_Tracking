@@ -6,3 +6,4 @@ __pycache__
 /db_connections.py
 .env
 /archive
+/notebooks/troubleshoot_scrape.ipynb
