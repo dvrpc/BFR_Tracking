@@ -60,10 +60,15 @@ q_capacity_analysis = """UPDATE filter_flags
 q_beyond_scope = """UPDATE filter_flags
                     SET status = 'Beyond Scope of Resurfacing'
                     WHERE "	Beyond scope of resurfacing" = 1; """
+                
+q_reviewed = """UPDATE filter_flags
+                SET status = 'Reviewed, not pursued'
+                WHERE " 	DVRPC Regional Priority" is not null
+                AND status is null"""
 
 q_no_status = """UPDATE filter_flags
                 SET status = 'Not Reviewed'
-                WHERE status IS NULL; """
+                WHERE status is null; """
 
 
 def status():
@@ -79,6 +84,7 @@ def status():
     ENGINE.execute(q_completed)
     ENGINE.execute(q_capacity_analysis)
     ENGINE.execute(q_beyond_scope)
+    ENGINE.execute(q_reviewed)
     ENGINE.execute(q_no_status)
 
 def main():
