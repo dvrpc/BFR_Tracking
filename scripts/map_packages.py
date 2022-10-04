@@ -32,6 +32,38 @@ def lookup_county_code(letter):
     return county_lookup[letter]
 
 
+def join_status(package_name):
+	code = lookup_county_code(parse_county_identifier(package_name))
+
+	results = pd.read_sql(
+		fr"""with tblA AS(
+			select "GISID" ,
+				cast("	STATE_ROUTE" as varchar) ,
+				"	LOC_ROAD_NAME_RMS" ,
+				"	municipality1" ,
+				"  municipality2" ,
+				"  municipality3" ,
+				"	segment_from_to" ,
+				left("	segment_from_to", 4) as fsegment,
+				right("	segment_from_to", 4) as tsegment,
+				status 
+			from filter_flags ff
+			)
+			select b.*, a."GISID",a.status
+			from "{package_name}" b
+			left outer join tblA a on
+			b.sr = lpad(cast("	STATE_ROUTE" as varchar), 4, '0')
+			and
+			b.fsegment = a.fsegment
+			and
+			b.tsegment = a.tsegment
+			""",
+			con = ENGINE
+
+
+	)
+	return results
+
 def map_package(package_name):
     code = lookup_county_code(parse_county_identifier(package_name))
 

@@ -37,6 +37,7 @@ Output shapefiles are saved: `BFR/Tracking/data/paving_package/shapefiles`
 `check_paving_package_status.py` runs the other scripts necessary to compare a new set of paving packages with the database records. Scripts are run in the following order:
 
 - `import_oracle.py`: gathers latest record information from Oracle tracking database and sets up in postgres for analysis
+- `import_filters.py`: creates status field based on current standing of each record in the review process; requires manual output from oracle DB
 - `scrape_packages.py`: pulls data from paving package PDFs shared by PennDOT and imports into postgres for analysis
 - `map_packages.py`: creates shapefiles/geojsons from paving package data
 - `make_folium_map.py`: maps the paving packages for visual comparison
@@ -67,6 +68,10 @@ To keep track of which revisions have been incorporated, a google sheet is avail
 ```
 https://docs.google.com/spreadsheets/d/1JgnZVrL4ZxedgYVyf9-Vw6cHpRy1d4zSgO7_c0eoPSY/edit?usp=sharing
 ```
+
+## Handling failed PDF scrapes
+
+See `troubleshoot_scrape.py`
 
 ## Cleanup Script
 
