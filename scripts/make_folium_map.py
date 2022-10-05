@@ -54,12 +54,12 @@ def strip(string):
 def main():
 
     data_dir = Path("./data/geojson")
-    mapped_seg = Path("./data/mapped_segments_geojson")
+    #mapped_seg = Path("./data/mapped_segments_geojson")
     philly_city_hall = [39.952179401878304, -75.16376402095634]
     output_path = "./maps/2023_packages.html"
 
     reproject(data_dir)
-    reproject(mapped_seg)
+    #reproject(mapped_seg)
 
     # make the folium map
     m = folium.Map(
@@ -67,32 +67,26 @@ def main():
         tiles="cartodbpositron",
         zoom_start=9,
     )
-    # add 5-year plan segments to the map
-    for geojsonfilepath in mapped_seg.rglob("*.geojson"):
+    # add mapped packages
+    for geojsonfilepath in data_dir.rglob("*pkg.geojson"):
         file_name = geojsonfilepath.stem
         print("Adding", file_name)
         folium.GeoJson(
             json.load(open(geojsonfilepath)),
-            name="5-year Plan",
+            name="Paving Package",
             style_function=lambda x: {
                 "color": "gray",
-                # if x["properties"]["CALENDAR_YEAR"] == 2022
-                # else "blue"
-                # if x["properties"]["CALENDAR_YEAR"] == 2023
-                # else "darkblue"
-                # if x["properties"]["CALENDAR_YEAR"] == 2024
-                # else "gray",
-                "weight": "1",
+                "weight": "6",
             },
             popup=folium.GeoJsonPopup(
-                fields=["sr", "CALENDAR_YEAR"],
-                aliases=["State Route: ", "Planned Year: "],
+                fields=["sr", "name"],
+                aliases=["State Route: ", "Road Name: "],
             ),
             zoom_on_click=True,
         ).add_to(m)
 
-    # add package geojson files to the map
-    for geojsonfilepath in data_dir.rglob("*.geojson"):
+    # add mapped status report geojson files to the map
+    for geojsonfilepath in data_dir.rglob("*report.geojson"):
         file_name = geojsonfilepath.stem
         code = parse_name(strip(file_name))
         County = lookup_county_code(code)
@@ -122,10 +116,10 @@ def main():
                 if x["properties"]["status"] == "For DVRPC to Screen for Feasibility"
                 else "white"
                 if x["properties"]["status"] == "Beyond Scope of Resurfacing"
-                else "yellow"
+                else "darkblue"
                 if x["properties"]["status"] == "Reviewed, not pursued"
                 else "black",
-                "weight": "4",
+                "weight": "2",
             },
             popup=folium.GeoJsonPopup(
                 fields=["sr", "name", "status"],
