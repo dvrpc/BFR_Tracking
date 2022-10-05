@@ -82,7 +82,7 @@ def main():
                 fields=["sr", "name"],
                 aliases=["State Route: ", "Road Name: "],
             ),
-            zoom_on_click=True,
+            zoom_on_click=False,
         ).add_to(m)
 
     # add mapped status report geojson files to the map
