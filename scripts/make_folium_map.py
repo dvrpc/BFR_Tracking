@@ -15,6 +15,7 @@ from folium.map import Popup
 import geopandas as gpd
 import env_vars as ev
 from map_packages import lookup_county_code
+from folium.plugins import FloatImage
 
 
 # ensure geojson files use epsg=4326
@@ -130,6 +131,10 @@ def main():
 
     # add layer toggle box and save to HTML file
     folium.LayerControl().add_to(m)
+
+    # add legend image
+    image_file = 'map_legend.png'
+    FloatImage(image_file, bottom = 3, left = 1).add_to(m)
 
     print("Writing HTML file to", output_path)
     m.save(output_path)
