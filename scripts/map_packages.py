@@ -90,25 +90,73 @@ def status_report(package_name):
 	results = pd.read_sql(
 		fr"""
 		with tblA AS(
-		select "GISID" ,
-			cast("	STATE_ROUTE" as varchar) ,
-			"	LOC_ROAD_NAME_RMS" ,
-			"	municipality1" ,
-			"  municipality2" ,
-			"  municipality3" ,
-			"	segment_from_to" ,
-			left("	segment_from_to", 4) as fsegment,
-			right("	segment_from_to", 4) as tsegment,
-			status 
-		from filter_flags ff
-		)
-		select b.*, a."GISID",a.status
-		from "{package_name}" b
-		left outer join tblA a on
-		b.sr = lpad(cast("	STATE_ROUTE" as varchar), 4, '0')
-		and lpad(cast(b.fsegment as varchar), 4, '0') = a.fsegment
-		and lpad(cast(b.tsegment as varchar), 4, '0') = a.tsegment
-		order by b.project_num ;
+			select "GISID" ,
+				cast("	STATE_ROUTE" as varchar) ,
+				"	LOC_ROAD_NAME_RMS" ,
+				"	ADMINSELECTED" ,
+				"	CALENDAR_YEAR" ,
+				"	municipality1" ,
+				"  municipality2" ,
+				"  municipality3" ,
+				"	segment_from_to" ,
+				left("	segment_from_to", 4) as fsegment,
+				right("	segment_from_to", 4) as tsegment,
+				status 
+			from filter_flags ff
+		),
+		match_segments AS(	
+			select b.*, a.*
+			from "{package_name}" b
+			left outer join tblA a on
+			b.sr = lpad(cast("	STATE_ROUTE" as varchar), 4, '0')
+			and (lpad(cast(b.fsegment as varchar), 4, '0') = a.fsegment
+			and lpad(cast(b.tsegment as varchar), 4, '0') = a.tsegment)
+			where "	ADMINSELECTED" = 'Y'
+			order by b.project_num),
+		no_match AS(
+			select *
+			from "{package_name}" b
+			where project_num not in (select project_num from match_segments)
+		),
+		nomatch_join as(
+			select b.*, a.*
+			from no_match b
+			left outer join tblA a on
+			b.sr = lpad(cast(a."	STATE_ROUTE" as varchar), 4, '0')
+			and ((cast(b.fsegment as numeric) >= cast(a.fsegment as numeric) and cast(b.fsegment as numeric) <= cast(a.tsegment as numeric))
+			or (cast(b.tsegment as numeric) <= cast(a.tsegment as numeric) and cast(b.tsegment as numeric) >= cast(a.fsegment as numeric)))
+			and (upper(b.muni1) = a."	municipality1" or upper(b.muni1) = a."  municipality2" or upper(b.muni1) = a."  municipality3")
+			where "	ADMINSELECTED" = 'Y'
+			order by b.project_num
+			),
+		in_db_union as(
+			select *
+			from match_segments
+			union all
+			select *
+			from nomatch_join
+			order by project_num
+		),
+		not_in_db as(
+			select *
+			from "{package_name}" b
+			where project_num not in (select project_num from in_db_union)
+		),
+		blank_join as(
+			select b.*, a.*
+			from not_in_db b
+			left join tblA a on
+			b.sr = lpad(cast("	STATE_ROUTE" as varchar), 4, '0')
+			and (lpad(cast(b.fsegment as varchar), 4, '0') = a.fsegment
+			and lpad(cast(b.tsegment as varchar), 4, '0') = a.tsegment)
+			order by project_num
+			)
+		select *
+		from in_db_union
+		union all
+		select *
+		from blank_join
+		order by project_num
 	""",
 	con = ENGINE
 
