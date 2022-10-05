@@ -48,13 +48,15 @@ def parse_name(package_name):
 def lookup_county_code(letter):
     return county_lookup[letter[0:1]]
 
+def strip(string):
+    return string.replace(" ","")
 
 def main():
 
     data_dir = Path("./data/geojson")
     mapped_seg = Path("./data/mapped_segments_geojson")
     philly_city_hall = [39.952179401878304, -75.16376402095634]
-    output_path = "./maps/demo.html"
+    output_path = "./maps/2023_packages.html"
 
     reproject(data_dir)
     reproject(mapped_seg)
@@ -92,7 +94,7 @@ def main():
     # add package geojson files to the map
     for geojsonfilepath in data_dir.rglob("*.geojson"):
         file_name = geojsonfilepath.stem
-        code = parse_name(file_name)
+        code = parse_name(strip(file_name))
         County = lookup_county_code(code)
         layername = (fr"{County}: {code}",)
         print("Adding", file_name)
@@ -100,12 +102,28 @@ def main():
             json.load(open(geojsonfilepath)),
             name=layername,
             style_function=lambda x: {
-                "color": "green"
-                if x["properties"]["status"] == "Not Evaluated"
+                "color": "purple"
+                if x["properties"]["status"] == "Initial Screening"
                 else "orange"
-                if x["properties"]["status"] == "Fully Evaluated"
-                else "purple"
-                if x["properties"]["status"] == "Partially Evaluated"
+                if x["properties"]["status"] == "For PennDOT to Screen for Feasibility"
+                else "green"
+                if x["properties"]["status"] == "Letter Received"
+                else "red"
+                if x["properties"]["status"] == "Begin Municipal Outreach"
+                else "blue"
+                if x["properties"]["status"] == "Complete"
+                else "lightblue"
+                if x["properties"]["status"] == "Pending Review"
+                else "lightred"
+                if x["properties"]["status"] == "Not Reviewed"
+                else "darkred"
+                if x["properties"]["status"] == "Waiting for municipal letter"
+                else "lightgreen"
+                if x["properties"]["status"] == "For DVRPC to Screen for Feasibility"
+                else "white"
+                if x["properties"]["status"] == "Beyond Scope of Resurfacing"
+                else "yellow"
+                if x["properties"]["status"] == "Reviewed, not pursued"
                 else "black",
                 "weight": "4",
             },
